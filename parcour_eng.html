@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="dark scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +13,11 @@
                 extend: {
                     colors: {
                         brand: {
+                            50: '#dbeafe',
+                            100: '#bfdbfe',
                             400: '#60a5fa',
                             500: '#3b82f6',
-                            600: '#2563eb',
+                            600: '#2563eb'
                         }
                     },
                     animation: { 'fade-in-up': 'fadeInUp 0.8s ease-out forwards' }
@@ -24,39 +27,67 @@
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 font-sans antialiased transition-colors duration-300 flex flex-col min-h-screen">
-    
-    <nav class="fixed w-full z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
+
+<body
+    class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 font-sans antialiased transition-colors duration-300 flex flex-col min-h-screen">
+
+    <nav
+        class="fixed w-full z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center w-full">
             <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 dark:text-slate-400 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
             </button>
             <div class="hidden md:flex space-x-1">
-                <a href="index_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Home</a>
-                <a href="parcour_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Background</a>
-                <a href="projets_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Projects</a>
-                <a href="experiences_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Experiences</a>
-                <a href="passions_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Passions</a>
-                <a href="contact_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Contact</a>
+                <a href="index_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Home</a>
+                <a href="parcour_eng.html"
+                    class="px-4 py-2 rounded-lg bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 font-semibold transition-all">Background</a>
+                <a href="projets_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Projects</a>
+                <a href="experiences_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Experiences</a>
+                <a href="passions_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Passions</a>
+                <a href="contact_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Contact</a>
             </div>
             <div class="flex items-center space-x-3 ml-auto md:ml-0">
-                <button id="lang-toggle" class="px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform font-bold text-sm flex items-center">
+                <button id="lang-toggle"
+                    class="px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform font-bold text-sm flex items-center">
                     FR
                 </button>
-                <button id="theme-toggle" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform" aria-label="Change theme">
-                    <svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-                    <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+                <button id="theme-toggle"
+                    class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform"
+                    aria-label="Change theme">
+                    <svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            clip-rule="evenodd"></path>
+                    </svg>
                 </button>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-xl">
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-20 left-0 w-full bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-xl">
             <div class="flex flex-col items-center py-6 space-y-4">
-               <a href="index_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Home</a>
-                <a href="parcour_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Background</a>
-                <a href="projets_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Projects</a>
-                <a href="experiences_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Experiences</a>
-                <a href="passions_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Passions</a>
-                <a href="contact_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Contact</a>
+                <a href="index_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Home</a>
+                <a href="parcour_eng.html"
+                    class="px-4 py-2 rounded-lg bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 font-semibold transition-all w-3/4 text-center">Background</a>
+                <a href="projets_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Projects</a>
+                <a href="experiences_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Experiences</a>
+                <a href="passions_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Passions</a>
+                <a href="contact_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Contact</a>
             </div>
         </div>
     </nav>
@@ -65,12 +96,16 @@
         <div class="mb-16 text-center">
             <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Background & Education</h1>
         </div>
-            
+
         <div class="space-y-12">
             <div class="relative pl-8 border-l-2 border-brand-500">
-                <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-slate-50 dark:ring-slate-950"></div>
-                <h3 class="text-2xl font-bold text-slate-900 dark:text-white">IT Administration and Cybersecurity Internship</h3>
-                <p class="text-brand-600 dark:text-brand-400 font-medium mb-2 mt-1">Campus Provence Verte (LPPV) | 2025</p>
+                <div
+                    class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-slate-50 dark:ring-slate-950">
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-white">IT Administration and Cybersecurity
+                    Internship</h3>
+                <p class="text-brand-600 dark:text-brand-400 font-medium mb-2 mt-1">Campus Provence Verte (LPPV) | 2025
+                </p>
                 <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-2 mt-4">
                     <li>Administration of critical servers on Proxmox VE (Active Directory, DNS, NAS).</li>
                     <li>Full migration from Debian 11 to Debian 12 with implementation of security policies.</li>
@@ -80,16 +115,23 @@
             </div>
 
             <div class="relative pl-8 border-l-2 border-slate-300 dark:border-slate-700">
-                <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-700 ring-4 ring-slate-50 dark:ring-slate-950"></div>
-                <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Bachelor of Technology (BUT) in Networks and Telecommunications</h3>
-                <p class="text-slate-500 font-medium mb-2 mt-1">Aix-Marseille University Institute of Technology (IUT) | 2023 - 2026</p>
+                <div
+                    class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-700 ring-4 ring-slate-50 dark:ring-slate-950">
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Bachelor of Technology (BUT) in Networks
+                    and Telecommunications</h3>
+                <p class="text-slate-500 font-medium mb-2 mt-1">Aix-Marseille University Institute of Technology (IUT) |
+                    2023 - 2026</p>
                 <p class="text-slate-600 dark:text-slate-400 mt-2">
-                    Cybersecurity track. Degree program with professional certifications: CISCO CCNA 1 v7, CCNA 2 v7, CCNA 3 v7, CNSA, MOOC ANSSI, TOEIC.
+                    Cybersecurity track. Degree program with professional certifications: CISCO CCNA 1 v7, CCNA 2 v7,
+                    CCNA 3 v7, CNSA, MOOC ANSSI, TOEIC.
                 </p>
             </div>
 
             <div class="relative pl-8 border-l-2 border-slate-300 dark:border-slate-700">
-                <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-700 ring-4 ring-slate-50 dark:ring-slate-950"></div>
+                <div
+                    class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-700 ring-4 ring-slate-50 dark:ring-slate-950">
+                </div>
                 <h3 class="text-2xl font-bold text-slate-900 dark:text-white">IT Project Intern</h3>
                 <p class="text-slate-500 font-medium mb-2 mt-1">Private High School Provence Verte | 2020</p>
                 <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-2 mt-4">
@@ -100,16 +142,25 @@
         </div>
     </main>
 
-    <footer class="mt-auto w-full border-t border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md py-8">
+    <footer
+        class="mt-auto w-full border-t border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md py-8">
         <div class="max-w-7xl mx-auto px-4 flex justify-center space-x-6 md:space-x-8">
-            <a href="index_eng.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Home</a>
-            <a href="parcour_eng.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Background</a>
-            <a href="projets_eng.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Projects</a>
-            <a href="experiences_eng.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Experiences</a>
-            <a href="passions_eng.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Passions</a>
-            <a href="contact_eng.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Contact me</a>
+            <a href="index_eng.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Home</a>
+            <a href="parcour_eng.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Background</a>
+            <a href="projets_eng.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Projects</a>
+            <a href="experiences_eng.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Experiences</a>
+            <a href="passions_eng.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Passions</a>
+            <a href="contact_eng.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Contact
+                me</a>
         </div>
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
