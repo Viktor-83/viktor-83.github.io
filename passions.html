@@ -1,89 +1,143 @@
 <!DOCTYPE html>
 <html lang="fr" class="dark scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passions | Victor HACQUE--RANQUE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { brand: { 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb' } }, animation: { 'fade-in-up': 'fadeInUp 0.8s ease-out forwards' } } } }
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#dbeafe',
+                            100: '#bfdbfe',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb'
+                        }
+                    },
+                    animation: { 'fade-in-up': 'fadeInUp 0.8s ease-out forwards' }
+                }
+            }
+        }
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 font-sans antialiased transition-colors duration-300 flex flex-col min-h-screen">
-    
-    <nav class="fixed w-full z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
+
+<body
+    class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 font-sans antialiased transition-colors duration-300 flex flex-col min-h-screen">
+
+    <nav
+        class="fixed w-full z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center w-full">
             <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 dark:text-slate-400 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
             </button>
             <div class="hidden md:flex space-x-1">
-                <a href="index.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Accueil</a>
-                <a href="parcours.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Parcours</a>
-                <a href="projets.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Projets</a>
-                <a href="experiences.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Expériences</a>
-                <a href="passions.html" class="px-4 py-2 rounded-lg bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 font-semibold transition-all">Passions</a>
-                <a href="contact.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Contact</a>
+                <a href="index.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Accueil</a>
+                <a href="parcour.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Parcour</a>
+                <a href="projets.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Projets</a>
+                <a href="experiences.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Expériences</a>
+                <a href="passions.html"
+                    class="px-4 py-2 rounded-lg bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 font-semibold transition-all">Passions</a>
+                <a href="contact.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Contact</a>
             </div>
             <div class="flex items-center space-x-3 ml-auto md:ml-0">
-                <button id="lang-toggle" class="px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform font-bold text-sm flex items-center">
+                <button id="lang-toggle"
+                    class="px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform font-bold text-sm flex items-center">
                     EN
                 </button>
-                <button id="theme-toggle" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform" aria-label="Changer le thème">
-                    <svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-                    <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+                <button id="theme-toggle"
+                    class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform"
+                    aria-label="Changer le thème">
+                    <svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            clip-rule="evenodd"></path>
+                    </svg>
                 </button>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-xl">
+        <div id="mobile-menu"
+            class="hidden absolute top-20 left-0 w-full bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-xl">
             <div class="flex flex-col items-center py-6 space-y-4">
-                <a href="index.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Accueil</a>
-                <a href="parcours.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Parcours</a>
-                <a href="projets.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Projets</a>
-                <a href="experiences.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Expériences</a>
-                <a href="passions.html" class="px-4 py-2 rounded-lg bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 font-semibold transition-all w-3/4 text-center">Passions</a>
-                <a href="contact.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Contact</a>
+                <a href="index.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Accueil</a>
+                <a href="parcour.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Parcour</a>
+                <a href="projets.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Projets</a>
+                <a href="experiences.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Expériences</a>
+                <a href="passions.html"
+                    class="px-4 py-2 rounded-lg bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 font-semibold transition-all w-3/4 text-center">Passions</a>
+                <a href="contact.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Contact</a>
             </div>
         </div>
     </nav>
 
     <main class="flex-grow pt-32 pb-24 px-6 max-w-7xl mx-auto w-full opacity-0 animate-fade-in-up">
         <h1 class="text-4xl md:text-5xl font-extrabold mb-16 text-center">Centres d'intérêts</h1>
-        
+
         <div class="space-y-24">
-            
+
             <article class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl group dynamic-carousel" data-folder="img/aviation/" data-max="15">
+                <div class="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl group dynamic-carousel"
+                    data-folder="img/aviation/" data-max="15">
                     <div class="flex w-full h-full transition-transform duration-500 carousel-track"></div>
-                    <button class="prev-btn absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all z-10">‹</button>
-                    <button class="next-btn absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all z-10">›</button>
-                    <div class="carousel-indicators absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10"></div>
+                    <button
+                        class="prev-btn absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all z-10">‹</button>
+                    <button
+                        class="next-btn absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all z-10">›</button>
+                    <div class="carousel-indicators absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+                    </div>
                 </div>
                 <div>
                     <h2 class="text-3xl font-bold mb-6 text-brand-500">L'aviation</h2>
                     <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-                        Fasciné par les prouesses technologiques et la rigueur du domaine de l'aviation, 
-                        je cultive cet intérêt à travers la simulation de vol. Cette pratique 
-                        en environnement de groupe m'a permis de développer un fort esprit d'équipe, une 
-                        communication précise lors de vols en formation, ainsi qu'une excellente gestion du stress et 
+                        Fasciné par les prouesses technologiques et la rigueur du domaine de l'aviation,
+                        je cultive cet intérêt à travers la simulation de vol. Cette pratique
+                        en environnement de groupe m'a permis de développer un fort esprit d'équipe, une
+                        communication précise lors de vols en formation, ainsi qu'une excellente gestion du stress et
                         une réactivité accrue lors de situations complexes.
                     </p>
                 </div>
             </article>
 
             <article class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center md:flex-row-reverse">
-                <div class="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl group dynamic-carousel lg:order-2" data-folder="img/espace/" data-max="15">
+                <div class="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl group dynamic-carousel lg:order-2"
+                    data-folder="img/espace/" data-max="15">
                     <div class="flex w-full h-full transition-transform duration-500 carousel-track"></div>
-                    <button class="prev-btn absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all z-10">‹</button>
-                    <button class="next-btn absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all z-10">›</button>
-                    <div class="carousel-indicators absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10"></div>
+                    <button
+                        class="prev-btn absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all z-10">‹</button>
+                    <button
+                        class="next-btn absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all z-10">›</button>
+                    <div class="carousel-indicators absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+                    </div>
                 </div>
                 <div class="lg:order-1">
                     <h2 class="text-3xl font-bold mb-6 text-indigo-500">L'espace</h2>
                     <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-                        L'exploration spatiale et l'astronomie constituent pour moi des sources continues d'inspiration. 
-                        La complexité de ces domaines stimule ma curiosité et mon attrait pour la recherche et 
-                        l'innovation. Cette passion pour l'inconnu et les défis technologiques de grande ampleur renforce ma 
+                        L'exploration spatiale et l'astronomie constituent pour moi des sources continues d'inspiration.
+                        La complexité de ces domaines stimule ma curiosité et mon attrait pour la recherche et
+                        l'innovation. Cette passion pour l'inconnu et les défis technologiques de grande ampleur
+                        renforce ma
                         capacité à appréhender des architectures systèmes complexes et à envisager des solutions.
                     </p>
                 </div>
@@ -96,10 +150,14 @@
                 <div>
                     <h2 class="text-3xl font-bold mb-6 text-emerald-500">Les jeux vidéos</h2>
                     <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-                        L'univers du jeux vidéo, et plus spécifiquement le modding et l'administration de serveurs dédiés, 
-                        constitue pour moi un véritable laboratoire d'expérimentation technique. La configuration d'environnements 
-                        multijoueurs complexes, l'optimisation des ressources et la gestion technique pour un groupe d'utilisateurs 
-                        m'ont permis de forger des compétences pratiques solides en administration système, en réseau et en 
+                        L'univers du jeux vidéo, et plus spécifiquement le modding et l'administration de serveurs
+                        dédiés,
+                        constitue pour moi un véritable laboratoire d'expérimentation technique. La configuration
+                        d'environnements
+                        multijoueurs complexes, l'optimisation des ressources et la gestion technique pour un groupe
+                        d'utilisateurs
+                        m'ont permis de forger des compétences pratiques solides en administration système, en réseau et
+                        en
                         résolution de problèmes techniques.
                     </p>
                 </div>
@@ -108,16 +166,25 @@
         </div>
     </main>
 
-    <footer class="mt-auto w-full border-t border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md py-8">
+    <footer
+        class="mt-auto w-full border-t border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md py-8">
         <div class="max-w-7xl mx-auto px-4 flex justify-center space-x-6 md:space-x-8">
-            <a href="index.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Accueil</a>
-            <a href="parcours.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Parcours</a>
-            <a href="projets.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Projets</a>
-            <a href="experiences.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Expériences</a>
-            <a href="passions.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Passions</a>
-            <a href="contact.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Contactez moi</a>
+            <a href="index.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Accueil</a>
+            <a href="parcour.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Parcour</a>
+            <a href="projets.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Projets</a>
+            <a href="experiences.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Expériences</a>
+            <a href="passions.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Passions</a>
+            <a href="contact.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Contactez
+                moi</a>
         </div>
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
