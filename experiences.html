@@ -1,93 +1,48 @@
 <!DOCTYPE html>
 <html lang="fr" class="dark scroll-smooth">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expériences | Victor HACQUE--RANQUE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#dbeafe',
-                            100: '#bfdbfe',
-                            400: '#60a5fa',
-                            500: '#3b82f6',
-                            600: '#2563eb'
-                        }
-                    },
-                    animation: { 'fade-in-up': 'fadeInUp 0.8s ease-out forwards' }
-                }
-            }
-        }
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { brand: { 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb' } }, animation: { 'fade-in-up': 'fadeInUp 0.8s ease-out forwards' } } } }
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
-
-<body
-    class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 font-sans antialiased transition-colors duration-300 flex flex-col min-h-screen">
-
-    <nav
-        class="fixed w-full z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 font-sans antialiased transition-colors duration-300 flex flex-col min-h-screen">
+    
+    <nav class="fixed w-full z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center w-full">
             <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 dark:text-slate-400 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                    </path>
-                </svg>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
             <div class="hidden md:flex space-x-1">
-                <a href="index.html"
-                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Accueil</a>
-                <a href="parcour.html"
-                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Parcour</a>
-                <a href="projets.html"
-                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Projets</a>
-                <a href="experiences.html"
-                    class="px-4 py-2 rounded-lg bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 font-semibold transition-all">Expériences</a>
-                <a href="passions.html"
-                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Passions</a>
-                <a href="contact.html"
-                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Contact</a>
+                <a href="index.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Accueil</a>
+                <a href="parcours.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Parcours</a>
+                <a href="projets.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Projets</a>
+                <a href="experiences.html" class="px-4 py-2 rounded-lg bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 font-semibold transition-all">Expériences</a>
+                <a href="passions.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Passions</a>
+                <a href="contact.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Contact</a>
             </div>
             <div class="flex items-center space-x-3 ml-auto md:ml-0">
-                <button id="lang-toggle"
-                    class="px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform font-bold text-sm flex items-center">
+                <button id="lang-toggle" class="px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform font-bold text-sm flex items-center">
                     EN
                 </button>
-                <button id="theme-toggle"
-                    class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform"
-                    aria-label="Changer le thème">
-                    <svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                    </svg>
-                    <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                            clip-rule="evenodd"></path>
-                    </svg>
+                <button id="theme-toggle" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform" aria-label="Changer le thème">
+                    <svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
                 </button>
             </div>
         </div>
-        <div id="mobile-menu"
-            class="hidden absolute top-20 left-0 w-full bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-xl">
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-xl">
             <div class="flex flex-col items-center py-6 space-y-4">
-                <a href="index.html"
-                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Accueil</a>
-                <a href="parcour.html"
-                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Parcour</a>
-                <a href="projets.html"
-                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Projets</a>
-                <a href="experiences.html"
-                    class="px-4 py-2 rounded-lg bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 font-semibold transition-all w-3/4 text-center">Expériences</a>
-                <a href="passions.html"
-                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Passions</a>
-                <a href="contact.html"
-                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Contact</a>
+                <a href="index.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Accueil</a>
+                <a href="parcours.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Parcours</a>
+                <a href="projets.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Projets</a>
+                <a href="experiences.html" class="px-4 py-2 rounded-lg bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 font-semibold transition-all w-3/4 text-center">Expériences</a>
+                <a href="passions.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Passions</a>
+                <a href="contact.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Contact</a>
             </div>
         </div>
     </nav>
@@ -96,82 +51,55 @@
         <div class="mb-16 text-center">
             <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Expériences Professionnelles</h1>
             <p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8">
-                Campus Provence Verte : Renforcement de la Sécurité Informatique et Optimisation des Services IT
-                (rapport très simplifié).
+                Campus Provence Verte : Renforcement de la Sécurité Informatique et Optimisation des Services IT (rapport très simplifié).
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="documents/HACQUE--RANQUE%20Victor%20_%20Renforcement%20de%20la%20S%C3%A9curit%C3%A9%20Informatique%20et%20Optimisation%20des%20Services%20IT.docx.pdf"
-                    target="_blank"
-                    class="inline-flex items-center px-6 py-3 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-500 transition-colors shadow-lg">
+                <a href="documents/HACQUE--RANQUE%20Victor%20_%20Renforcement%20de%20la%20S%C3%A9curit%C3%A9%20Informatique%20et%20Optimisation%20des%20Services%20IT.docx.pdf" target="_blank" class="inline-flex items-center px-6 py-3 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-500 transition-colors shadow-lg">
                     Rapport Complet
                 </a>
-                <a href="documents/HACQUE--RANQUE%20Victor%20_%20ANNEXE%20Renforcement%20de%20la%20S%C3%A9curit%C3%A9%20Informatique%20et%20Optimisation%20des%20Services%20IT.docx.pdf"
-                    target="_blank"
-                    class="inline-flex items-center px-6 py-3 border-2 border-slate-200 dark:border-slate-800 font-bold rounded-xl hover:border-brand-500 dark:hover:border-brand-500 hover:text-brand-500 dark:hover:text-brand-500 transition-colors">
+                <a href="documents/HACQUE--RANQUE%20Victor%20_%20ANNEXE%20Renforcement%20de%20la%20S%C3%A9curit%C3%A9%20Informatique%20et%20Optimisation%20des%20Services%20IT.docx.pdf" target="_blank" class="inline-flex items-center px-6 py-3 border-2 border-slate-200 dark:border-slate-800 font-bold rounded-xl hover:border-brand-500 dark:hover:border-brand-500 hover:text-brand-500 dark:hover:text-brand-500 transition-colors">
                     Annexe Technique
                 </a>
             </div>
         </div>
 
         <div class="space-y-16">
-
-            <section
-                class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 shadow-xl relative overflow-hidden">
+            
+            <section class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 shadow-xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-brand-500/10 rounded-bl-full -z-10"></div>
                 <div class="flex items-center mb-8 border-b border-slate-200 dark:border-slate-800 pb-6">
-                    <div
-                        class="w-12 h-12 rounded-xl bg-brand-500 text-white flex items-center justify-center font-bold text-xl mr-4 shadow-lg shadow-brand-500/30">
-                        1</div>
+                    <div class="w-12 h-12 rounded-xl bg-brand-500 text-white flex items-center justify-center font-bold text-xl mr-4 shadow-lg shadow-brand-500/30">1</div>
                     <h2 class="text-3xl font-extrabold">Stage</h2>
                 </div>
-
+                
                 <div class="space-y-12">
-
+                    
                     <div>
                         <h3 class="text-2xl font-bold mb-6 text-brand-500">1. Sécurisation des serveurs</h3>
-
+                        
                         <div class="mb-8">
                             <h4 class="text-xl font-bold mb-3 text-brand-500">1.1 Contexte</h4>
                             <p class="text-slate-600 dark:text-slate-400 mb-4">
-                                Dans le cadre de mon stage au sein du service informatique du Campus Provence Verte,
-                                l'une des premières missions majeures qui m'a été confiée a porté sur la sécurisation de
-                                l'ensemble des serveurs principaux de l'établissement. Ces serveurs représentent le cœur
-                                névralgique de l'infrastructure numérique du campus : ils assurent des fonctions
-                                critiques telles que l'authentification centralisée des utilisateurs, l'hébergement de
-                                services essentiels (bases de données, services DNS, DHCP, Samba, etc.), la gestion des
-                                postes clients et la coordination des communications inter-systèmes au sein du réseau
-                                local.
+                                Dans le cadre de mon stage au sein du service informatique du Campus Provence Verte, l'une des premières missions majeures qui m'a été confiée a porté sur la sécurisation de l'ensemble des serveurs principaux de l'établissement. Ces serveurs représentent le cœur névralgique de l'infrastructure numérique du campus : ils assurent des fonctions critiques telles que l'authentification centralisée des utilisateurs, l'hébergement de services essentiels (bases de données, services DNS, DHCP, Samba, etc.), la gestion des postes clients et la coordination des communications inter-systèmes au sein du réseau local.
                             </p>
                             <p class="text-slate-600 dark:text-slate-400 mb-6">
-                                Leur disponibilité, leur fiabilité et leur sécurité sont donc primordiales pour garantir
-                                la continuité des activités pédagogiques et administratives de l'établissement. Une
-                                défaillance ou une compromission des serveurs pourrait impacter de nombreux
-                                utilisateurs, tels que des enseignants, élèves ou personnel administratif, et
-                                compromettre la confidentialité, l'intégrité ou la disponibilité des données.
+                                Leur disponibilité, leur fiabilité et leur sécurité sont donc primordiales pour garantir la continuité des activités pédagogiques et administratives de l'établissement. Une défaillance ou une compromission des serveurs pourrait impacter de nombreux utilisateurs, tels que des enseignants, élèves ou personnel administratif, et compromettre la confidentialité, l'intégrité ou la disponibilité des données.
                             </p>
-
-                            <div
-                                class="bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800 flex flex-col md:flex-row overflow-hidden shadow-sm">
+                            
+                            <div class="bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800 flex flex-col md:flex-row overflow-hidden shadow-sm">
                                 <div class="md:w-2/5 min-h-[250px] relative bg-slate-200 dark:bg-slate-700">
-                                    <img src="img/serveur-proxmox.jpg" alt="Infrastructure des serveurs"
-                                        class="absolute inset-0 w-full h-full object-cover">
+                                    <img src="img/serveur-proxmox.jpg" alt="Infrastructure des serveurs" class="absolute inset-0 w-full h-full object-cover">
                                 </div>
                                 <div class="p-6 md:w-3/5 flex flex-col justify-center">
                                     <h5 class="font-bold mb-4 text-lg">Infrastructure des serveurs principaux</h5>
                                     <ul class="space-y-3 text-sm text-slate-700 dark:text-slate-300">
-                                        <li><strong>SE4AD</strong> - Contrôleur de domaine principal (Debian 12
-                                            Bookworm)</li>
-                                        <li><strong>SE4FS</strong> - Serveur de fichiers et services réseau (Debian 12
-                                            Bookworm)</li>
+                                        <li><strong>SE4AD</strong> - Contrôleur de domaine principal (Debian 12 Bookworm)</li>
+                                        <li><strong>SE4FS</strong> - Serveur de fichiers et services réseau (Debian 12 Bookworm)</li>
                                         <li><strong>AdGuard DNS</strong> - Filtre DNS (Debian 11 Bullseye)</li>
-                                        <li><strong>Charlemagne</strong> - Windows Server pour documents administratifs
-                                        </li>
+                                        <li><strong>Charlemagne</strong> - Windows Server pour documents administratifs</li>
                                     </ul>
                                     <p class="mt-5 text-sm text-slate-600 dark:text-slate-400">
-                                        L'ensemble des serveurs (à l'exception de Charlemagne) sont hébergés sur une
-                                        infrastructure de virtualisation basée sur Proxmox VE, installée sur une machine
-                                        physique équipée de disques SSD en RAID 1. Cette solution permet une gestion
-                                        souple, centralisée et sécurisée des différentes machines virtuelles.
+                                        L'ensemble des serveurs (à l'exception de Charlemagne) sont hébergés sur une infrastructure de virtualisation basée sur Proxmox VE, installée sur une machine physique équipée de disques SSD en RAID 1. Cette solution permet une gestion souple, centralisée et sécurisée des différentes machines virtuelles.
                                     </p>
                                 </div>
                             </div>
@@ -182,39 +110,28 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                 <div class="p-4 border border-slate-200 dark:border-slate-800 rounded-xl">
                                     <strong class="block mb-2">Debian Linux</strong>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">Migration de Debian 11
-                                        Bullseye vers Debian 12 Bookworm pour améliorer la sécurité et bénéficier des
-                                        dernières mises à jour.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Migration de Debian 11 Bullseye vers Debian 12 Bookworm pour améliorer la sécurité et bénéficier des dernières mises à jour.</p>
                                 </div>
                                 <div class="p-4 border border-slate-200 dark:border-slate-800 rounded-xl">
                                     <strong class="block mb-2">Proxmox VE</strong>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">Platforme de virtualisation
-                                        permettant la gestion centralisée des machines virtuelles, la création de clones
-                                        de sauvegarde et la réallocation des ressources.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Platforme de virtualisation permettant la gestion centralisée des machines virtuelles, la création de clones de sauvegarde et la réallocation des ressources.</p>
                                 </div>
                                 <div class="p-4 border border-slate-200 dark:border-slate-800 rounded-xl md:col-span-2">
                                     <strong class="block mb-2">SambaEdu</strong>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">Solution de gestion
-                                        centralisée des utilisateurs, groupes et postes clients. Intégration avec Active
-                                        Directory pour l'authentification et les politiques de sécurité.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Solution de gestion centralisée des utilisateurs, groupes et postes clients. Intégration avec Active Directory pour l'authentification et les politiques de sécurité.</p>
                                 </div>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div
-                                    class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-100 dark:border-slate-800">
+                                <div class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-100 dark:border-slate-800">
                                     <h5 class="font-bold mb-3">Services de sécurité</h5>
                                     <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
-                                        <li><strong>UFW (Uncomplicated Firewall)</strong> - Pare-feu simplifié pour
-                                            Linux</li>
-                                        <li><strong>Fail2ban</strong> - Protection contre les attaques par force brute
-                                        </li>
-                                        <li><strong>SSH avec authentification par clé</strong> - Accès sécurisé aux
-                                            serveurs</li>
+                                        <li><strong>UFW (Uncomplicated Firewall)</strong> - Pare-feu simplifié pour Linux</li>
+                                        <li><strong>Fail2ban</strong> - Protection contre les attaques par force brute</li>
+                                        <li><strong>SSH avec authentification par clé</strong> - Accès sécurisé aux serveurs</li>
                                         <li><strong>FreeRADIUS</strong> - Serveur d'authentification réseau</li>
                                     </ul>
                                 </div>
-                                <div
-                                    class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-100 dark:border-slate-800">
+                                <div class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-100 dark:border-slate-800">
                                     <h5 class="font-bold mb-3">Services réseau</h5>
                                     <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
                                         <li><strong>Apache2</strong> - Serveur web</li>
@@ -231,107 +148,58 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="p-4 border border-slate-200 dark:border-slate-800 rounded-xl">
                                     <strong class="block mb-2">Mise à jour des systèmes</strong>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">Migration de Debian 11
-                                        Bullseye vers Debian 12 Bookworm sur les serveurs SE4AD et SE4FS pour bénéficier
-                                        des dernières corrections de sécurité et améliorations.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Migration de Debian 11 Bullseye vers Debian 12 Bookworm sur les serveurs SE4AD et SE4FS pour bénéficier des dernières corrections de sécurité et améliorations.</p>
                                 </div>
                                 <div class="p-4 border border-slate-200 dark:border-slate-800 rounded-xl">
                                     <strong class="block mb-2">Configuration des pare-feux</strong>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">Activation et configuration
-                                        d'UFW (Uncomplicated Firewall) sur tous les serveurs Linux avec règles
-                                        spécifiques pour chaque service (SSH, HTTP, HTTPS, DNS, etc.).</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Activation et configuration d'UFW (Uncomplicated Firewall) sur tous les serveurs Linux avec règles spécifiques pour chaque service (SSH, HTTP, HTTPS, DNS, etc.).</p>
                                 </div>
                                 <div class="p-4 border border-slate-200 dark:border-slate-800 rounded-xl">
                                     <strong class="block mb-2">Sécurisation SSH</strong>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">Mise en place de
-                                        l'authentification par clé SSH, désactivation de l'authentification par mot de
-                                        passe, et changement du port par défaut pour réduire les risques d'attaque.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Mise en place de l'authentification par clé SSH, désactivation de l'authentification par mot de passe, et changement du port par défaut pour réduire les risques d'attaque.</p>
                                 </div>
                                 <div class="p-4 border border-slate-200 dark:border-slate-800 rounded-xl">
                                     <strong class="block mb-2">Installation de Fail2ban</strong>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">Configuration de Fail2ban pour
-                                        protéger les services contre les attaques par force brute, avec des règles
-                                        personnalisées pour SSH, Apache, et autres services critiques.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Configuration de Fail2ban pour protéger les services contre les attaques par force brute, avec des règles personnalisées pour SSH, Apache, et autres services critiques.</p>
                                 </div>
                                 <div class="p-4 border border-slate-200 dark:border-slate-800 rounded-xl md:col-span-2">
                                     <strong class="block mb-2">Sauvegarde et clonage</strong>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">Création systématique de
-                                        clones complets de chaque machine virtuelle avant toute modification sensible.
-                                        Ces clones servent de points de restauration fiables en cas de problème. (Clones
-                                        pré-modification pour chaque serveur, tests sur environnements clonés,
-                                        validation avant mise en production).</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Création systématique de clones complets de chaque machine virtuelle avant toute modification sensible. Ces clones servent de points de restauration fiables en cas de problème. (Clones pré-modification pour chaque serveur, tests sur environnements clonés, validation avant mise en production).</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div
-                            class="project-card group bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/30 rounded-2xl p-6 cursor-pointer transition-all hover:shadow-md">
+                        <div class="project-card group bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/30 rounded-2xl p-6 cursor-pointer transition-all hover:shadow-md">
                             <div class="flex justify-between items-center">
                                 <h4 class="text-lg font-bold text-red-600 dark:text-red-400 flex items-center">
-                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
-                                        </path>
-                                    </svg>
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                                     1.4 Problèmes rencontrés & Solutions
                                 </h4>
-                                <div
-                                    class="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900/50 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors">
-                                    <svg class="w-4 h-4 transform transition-transform group-hover:rotate-180"
-                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 9l-7 7-7-7"></path>
-                                    </svg>
+                                <div class="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900/50 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                                    <svg class="w-4 h-4 transform transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                                 </div>
                             </div>
                             <div class="project-content overflow-hidden max-h-0 opacity-0 transition-all duration-500">
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                                     <div>
-                                        <strong class="block text-slate-900 dark:text-slate-100 text-sm mb-1">Blocage
-                                            des connexions Samba</strong>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">Après l'activation
-                                            d'UFW sur les serveurs SE4AD et SE4FS, les comptes utilisateurs ne pouvaient
-                                            plus se connecter aux postes Windows.</p>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400"><strong>Solution
-                                                :</strong> Analyse des logs UFW avec tail -f /var/log/ufw.log,
-                                            identification des ports TCP/UDP manquants (53 en TCP, 389 en UDP), ajout
-                                            des règles spécifiques au pare-feu UFW pour rétablir les connexions.</p>
+                                        <strong class="block text-slate-900 dark:text-slate-100 text-sm mb-1">Blocage des connexions Samba</strong>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">Après l'activation d'UFW sur les serveurs SE4AD et SE4FS, les comptes utilisateurs ne pouvaient plus se connecter aux postes Windows.</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400"><strong>Solution :</strong> Analyse des logs UFW avec tail -f /var/log/ufw.log, identification des ports TCP/UDP manquants (53 en TCP, 389 en UDP), ajout des règles spécifiques au pare-feu UFW pour rétablir les connexions.</p>
                                     </div>
                                     <div>
-                                        <strong class="block text-slate-900 dark:text-slate-100 text-sm mb-1">Problèmes
-                                            de mise à jour APT</strong>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">Des erreurs
-                                            bloquaient la mise à jour des serveurs à cause de dépôts invalides dans
-                                            /etc/apt/sources.list.</p>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400"><strong>Solution
-                                                :</strong> Commentaire des lignes défectueuses dans les fichiers de
-                                            sources APT sur SE4AD et SE4FS, suivi d'une relance des mises à jour.</p>
+                                        <strong class="block text-slate-900 dark:text-slate-100 text-sm mb-1">Problèmes de mise à jour APT</strong>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">Des erreurs bloquaient la mise à jour des serveurs à cause de dépôts invalides dans /etc/apt/sources.list.</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400"><strong>Solution :</strong> Commentaire des lignes défectueuses dans les fichiers de sources APT sur SE4AD et SE4FS, suivi d'une relance des mises à jour.</p>
                                     </div>
                                     <div>
-                                        <strong class="block text-slate-900 dark:text-slate-100 text-sm mb-1">Connexion
-                                            SSH instable</strong>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">SE4AD écoutait sur un
-                                            port SSH personnalisé (6602), ce qui perturbait certaines opérations
-                                            automatisées et scripts nécessitant une connexion SSH standard.</p>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400"><strong>Solution
-                                                :</strong> Création d'un fichier ~/.ssh/config pour gérer la connexion
-                                            sur le port non standard, configuration d’une tâche cron pour maintenir la
-                                            clé SSH dans /etc/ssh/ssh_known_hosts, puis création d’un script
-                                            automatisant le basculement temporaire sur le port 22 lors des mises à jour.
-                                        </p>
+                                        <strong class="block text-slate-900 dark:text-slate-100 text-sm mb-1">Connexion SSH instable</strong>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">SE4AD écoutait sur un port SSH personnalisé (6602), ce qui perturbait certaines opérations automatisées et scripts nécessitant une connexion SSH standard.</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400"><strong>Solution :</strong> Création d'un fichier ~/.ssh/config pour gérer la connexion sur le port non standard, configuration d’une tâche cron pour maintenir la clé SSH dans /etc/ssh/ssh_known_hosts, puis création d’un script automatisant le basculement temporaire sur le port 22 lors des mises à jour.</p>
                                     </div>
                                     <div>
-                                        <strong
-                                            class="block text-slate-900 dark:text-slate-100 text-sm mb-1">Automatisation
-                                            des mises à jour sécurisées</strong>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">La mise à jour de
-                                            SE4FS échouait lorsqu'une connexion SSH vers SE4AD était nécessaire, car le
-                                            port 22 n'était pas ouvert ni écouté.</p>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400"><strong>Solution
-                                                :</strong> Création d’un script secure_upgrade.sh qui bascule
-                                            temporairement SE4AD sur le port 22, ouvre dynamiquement le port dans UFW,
-                                            exécute la mise à jour, puis restaure la configuration initiale (port 6602).
-                                            Appelé via un alias apt upgrade -SSH intégré dans .bashrc.</p>
+                                        <strong class="block text-slate-900 dark:text-slate-100 text-sm mb-1">Automatisation des mises à jour sécurisées</strong>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">La mise à jour de SE4FS échouait lorsqu'une connexion SSH vers SE4AD était nécessaire, car le port 22 n'était pas ouvert ni écouté.</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400"><strong>Solution :</strong> Création d’un script secure_upgrade.sh qui bascule temporairement SE4AD sur le port 22, ouvre dynamiquement le port dans UFW, exécute la mise à jour, puis restaure la configuration initiale (port 6602). Appelé via un alias apt upgrade -SSH intégré dans .bashrc.</p>
                                     </div>
                                 </div>
                             </div>
@@ -339,51 +207,32 @@
                     </div>
 
                     <div>
-                        <h3
-                            class="text-2xl font-bold mb-6 text-brand-500 pt-6 border-t border-slate-100 dark:border-slate-800">
-                            2. Gestion centralisée des postes et des utilisateurs</h3>
+                        <h3 class="text-2xl font-bold mb-6 text-brand-500 pt-6 border-t border-slate-100 dark:border-slate-800">2. Gestion centralisée des postes et des utilisateurs</h3>
 
                         <div class="mb-8">
                             <h4 class="text-xl font-bold mb-3 text-brand-500">2.1 Contexte</h4>
                             <p class="text-slate-600 dark:text-slate-400 mb-4">
-                                La seconde mission majeure de mon stage a consisté à optimiser et renforcer la gestion
-                                centralisée des postes informatiques et des utilisateurs au sein du Campus Provence
-                                Verte. Cette mission s'inscrit dans la continuité de la sécurisation des serveurs, car
-                                elle vise à améliorer l'efficacité opérationnelle tout en maintenant un niveau de
-                                sécurité élevé.
+                                La seconde mission majeure de mon stage a consisté à optimiser et renforcer la gestion centralisée des postes informatiques et des utilisateurs au sein du Campus Provence Verte. Cette mission s'inscrit dans la continuité de la sécurisation des serveurs, car elle vise à améliorer l'efficacité opérationnelle tout en maintenant un niveau de sécurité élevé.
                             </p>
                             <p class="text-slate-600 dark:text-slate-400 mb-4">
-                                Le campus dispose d'un parc informatique conséquent composé de plusieurs salles de
-                                classe équipées d'ordinateurs, de postes enseignants, et de stations de travail
-                                administratives. La gestion de cet ensemble représente un défi constant pour l'équipe
-                                informatique, notamment en termes de déploiement de logiciels, de mise à jour de
-                                sécurité, de gestion des profils utilisateurs, et de maintenance préventive.
+                                Le campus dispose d'un parc informatique conséquent composé de plusieurs salles de classe équipées d'ordinateurs, de postes enseignants, et de stations de travail administratives. La gestion de cet ensemble représente un défi constant pour l'équipe informatique, notamment en termes de déploiement de logiciels, de mise à jour de sécurité, de gestion des profils utilisateurs, et de maintenance préventive.
                             </p>
                         </div>
 
                         <div class="mb-8">
                             <h4 class="text-xl font-bold mb-3 text-brand-500">2.2 Outils et technologies utilisés</h4>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                <div
-                                    class="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800">
+                                <div class="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800">
                                     <strong class="block mb-2 text-lg">Active Directory</strong>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">Service d'annuaire Microsoft
-                                        intégré à SambaEdu pour la gestion centralisée des utilisateurs, groupes, et
-                                        politiques de sécurité sur l'ensemble du réseau.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Service d'annuaire Microsoft intégré à SambaEdu pour la gestion centralisée des utilisateurs, groupes, et politiques de sécurité sur l'ensemble du réseau.</p>
                                 </div>
-                                <div
-                                    class="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800">
+                                <div class="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800">
                                     <strong class="block mb-2 text-lg">Group Policy</strong>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">Système de gestion des
-                                        stratégies de groupe permettant de configurer et contrôler les environnements
-                                        utilisateur et ordinateur de manière centralisée.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Système de gestion des stratégies de groupe permettant de configurer et contrôler les environnements utilisateur et ordinateur de manière centralisée.</p>
                                 </div>
-                                <div
-                                    class="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800">
+                                <div class="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800">
                                     <strong class="block mb-2 text-lg">LDAP / Kerberos</strong>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">Protocoles d'authentification
-                                        et d'autorisation utilisés pour sécuriser les communications entre les postes
-                                        clients et le contrôleur de domaine.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Protocoles d'authentification et d'autorisation utilisés pour sécuriser les communications entre les postes clients et le contrôleur de domaine.</p>
                                 </div>
                             </div>
                         </div>
@@ -393,164 +242,84 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="p-4 border border-slate-200 dark:border-slate-800 rounded-xl">
                                     <strong class="block mb-2">Optimisation des politiques de groupe</strong>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">Révision et optimisation des
-                                        Group Policy Objects (GPO) pour améliorer les temps de connexion et standardiser
-                                        les environnements utilisateur.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Révision et optimisation des Group Policy Objects (GPO) pour améliorer les temps de connexion et standardiser les environnements utilisateur.</p>
                                 </div>
                                 <div class="p-4 border border-slate-200 dark:border-slate-800 rounded-xl">
                                     <strong class="block mb-2">Gestion des profils utilisateurs</strong>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">Mise en place de profils
-                                        itinérants optimisés et configuration des redirections de dossiers pour
-                                        améliorer l'expérience utilisateur.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Mise en place de profils itinérants optimisés et configuration des redirections de dossiers pour améliorer l'expérience utilisateur.</p>
                                 </div>
                                 <div class="p-4 border border-slate-200 dark:border-slate-800 rounded-xl">
                                     <strong class="block mb-2">Automatisation des déploiements</strong>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">Création de scripts de
-                                        déploiement automatisé pour les logiciels et mises à jour, réduisant
-                                        significativement la charge de travail manuelle.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Création de scripts de déploiement automatisé pour les logiciels et mises à jour, réduisant significativement la charge de travail manuelle.</p>
                                 </div>
                                 <div class="p-4 border border-slate-200 dark:border-slate-800 rounded-xl">
                                     <strong class="block mb-2">Monitoring et maintenance</strong>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">Mise en place d'outils de
-                                        surveillance pour le suivi des performances des postes et la détection proactive
-                                        des problèmes.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Mise en place d'outils de surveillance pour le suivi des performances des postes et la détection proactive des problèmes.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div
-                            class="project-card group bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/30 rounded-2xl p-6 cursor-pointer transition-all hover:shadow-md">
+                        <div class="project-card group bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/30 rounded-2xl p-6 cursor-pointer transition-all hover:shadow-md">
                             <div class="flex justify-between items-center">
                                 <h4 class="text-lg font-bold text-red-600 dark:text-red-400 flex items-center">
-                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
-                                        </path>
-                                    </svg>
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                                     2.4 Problèmes rencontrés & Solutions
                                 </h4>
-                                <div
-                                    class="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900/50 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors">
-                                    <svg class="w-4 h-4 transform transition-transform group-hover:rotate-180"
-                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 9l-7 7-7-7"></path>
-                                    </svg>
+                                <div class="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900/50 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                                    <svg class="w-4 h-4 transform transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                                 </div>
                             </div>
                             <div class="project-content overflow-hidden max-h-0 opacity-0 transition-all duration-500">
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                                     <div>
-                                        <strong
-                                            class="block text-slate-900 dark:text-slate-100 text-sm mb-1">Incompatibilité
-                                            GPO Windows 11 Pro</strong>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">Certaines stratégies
-                                            de groupe ne s’appliquaient pas sur les postes équipés de Windows 11 Pro,
-                                            car elles étaient conçues pour les éditions Enterprise ou Education.</p>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400"><strong>Solution
-                                                :</strong> Vérification manuelle des GPO appliquées, suppression ou
-                                            adaptation des stratégies incompatibles, et remplacement par des
-                                            alternatives fonctionnelles sur l'édition Pro.</p>
+                                        <strong class="block text-slate-900 dark:text-slate-100 text-sm mb-1">Incompatibilité GPO Windows 11 Pro</strong>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">Certaines stratégies de groupe ne s’appliquaient pas sur les postes équipés de Windows 11 Pro, car elles étaient conçues pour les éditions Enterprise ou Education.</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400"><strong>Solution :</strong> Vérification manuelle des GPO appliquées, suppression ou adaptation des stratégies incompatibles, et remplacement par des alternatives fonctionnelles sur l'édition Pro.</p>
                                     </div>
                                     <div>
-                                        <strong class="block text-slate-900 dark:text-slate-100 text-sm mb-1">Rupture du
-                                            canal sécurisé avec le domaine</strong>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">Après une migration
-                                            du domaine Samba, plusieurs postes clients perdaient leur canal sécurisé,
-                                            empêchant l’authentification et l'application des GPO.</p>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400"><strong>Solution
-                                                :</strong> Création d’un script .bat exécutant une commande PowerShell
-                                            pour réinitialiser le canal sécurisé. Déploiement manuel via clé USB.
-                                            Vérification réseau (connectique, DNS) en cas d’échec.</p>
+                                        <strong class="block text-slate-900 dark:text-slate-100 text-sm mb-1">Rupture du canal sécurisé avec le domaine</strong>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">Après une migration du domaine Samba, plusieurs postes clients perdaient leur canal sécurisé, empêchant l’authentification et l'application des GPO.</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400"><strong>Solution :</strong> Création d’un script .bat exécutant une commande PowerShell pour réinitialiser le canal sécurisé. Déploiement manuel via clé USB. Vérification réseau (connectique, DNS) en cas d’échec.</p>
                                     </div>
                                     <div>
-                                        <strong class="block text-slate-900 dark:text-slate-100 text-sm mb-1">Manque de
-                                            supervision des serveurs</strong>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">L’absence d’outil de
-                                            monitoring rendait difficile la détection en temps réel des anomalies sur
-                                            les serveurs critiques.</p>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400"><strong>Solution
-                                                :</strong> Installation de Glances (CLI) pour un suivi synthétique, et
-                                            de Netdata (interface web) pour une surveillance graphique détaillée avec
-                                            alertes et historiques.</p>
+                                        <strong class="block text-slate-900 dark:text-slate-100 text-sm mb-1">Manque de supervision des serveurs</strong>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">L’absence d’outil de monitoring rendait difficile la détection en temps réel des anomalies sur les serveurs critiques.</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400"><strong>Solution :</strong> Installation de Glances (CLI) pour un suivi synthétique, et de Netdata (interface web) pour une surveillance graphique détaillée avec alertes et historiques.</p>
                                     </div>
                                     <div>
-                                        <strong class="block text-slate-900 dark:text-slate-100 text-sm mb-1">Congestion
-                                            réseau entre VMs Proxmox</strong>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">Plusieurs VMs
-                                            partageaient la même interface réseau physique, entraînant des lenteurs, des
-                                            délais d’application des GPO, et des déconnexions ponctuelles.</p>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400"><strong>Solution
-                                                :</strong> Création de bridges réseau distincts sur le serveur Proxmox,
-                                            attribution d’une interface physique dédiée à chaque VM critique (SambaEdu,
-                                            sauvegarde, supervision), réduction immédiate de la latence.</p>
+                                        <strong class="block text-slate-900 dark:text-slate-100 text-sm mb-1">Congestion réseau entre VMs Proxmox</strong>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">Plusieurs VMs partageaient la même interface réseau physique, entraînant des lenteurs, des délais d’application des GPO, et des déconnexions ponctuelles.</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400"><strong>Solution :</strong> Création de bridges réseau distincts sur le serveur Proxmox, attribution d’une interface physique dédiée à chaque VM critique (SambaEdu, sauvegarde, supervision), réduction immédiate de la latence.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div
-                        class="bg-gradient-to-br from-brand-600 to-indigo-700 rounded-3xl p-8 shadow-xl text-white mt-12">
+                    <div class="bg-gradient-to-br from-brand-600 to-indigo-700 rounded-3xl p-8 shadow-xl text-white mt-12">
                         <h3 class="text-3xl font-extrabold mb-6 text-center">Bilan des missions</h3>
                         <p class="mb-8 text-center text-white/90 max-w-3xl mx-auto">
-                            Ces deux missions principales ont permis de considérablement renforcer la sécurité et
-                            l'efficacité de l'infrastructure informatique du Campus Provence Verte. La sécurisation des
-                            serveurs a établi une base solide pour l'ensemble du système d'information, tandis que
-                            l'optimisation de la gestion centralisée a amélioré l'expérience utilisateur et réduit la
-                            charge de travail administratif.
+                            Ces deux missions principales ont permis de considérablement renforcer la sécurité et l'efficacité de l'infrastructure informatique du Campus Provence Verte. La sécurisation des serveurs a établi une base solide pour l'ensemble du système d'information, tandis que l'optimisation de la gestion centralisée a amélioré l'expérience utilisateur et réduit la charge de travail administratif.
                         </p>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                             <div>
-                                <h4 class="text-xl font-bold mb-4 opacity-90 border-b border-white/20 pb-2">Compétences
-                                    développées</h4>
+                                <h4 class="text-xl font-bold mb-4 opacity-90 border-b border-white/20 pb-2">Compétences développées</h4>
                                 <ul class="space-y-3">
-                                    <li class="flex items-center">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Administration système
-                                        Linux avancée
-                                    </li>
-                                    <li class="flex items-center">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Sécurisation
-                                        d'infrastructure réseau
-                                    </li>
-                                    <li class="flex items-center">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Gestion Active
-                                        Directory et LDAP
-                                    </li>
-                                    <li class="flex items-center">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Virtualisation avec
-                                        Proxmox VE
-                                    </li>
-                                    <li class="flex items-center">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Scripting et
-                                        automatisation
-                                    </li>
+                                    <li class="flex items-center"><div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Administration système Linux avancée</li>
+                                    <li class="flex items-center"><div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Sécurisation d'infrastructure réseau</li>
+                                    <li class="flex items-center"><div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Gestion Active Directory et LDAP</li>
+                                    <li class="flex items-center"><div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Virtualisation avec Proxmox VE</li>
+                                    <li class="flex items-center"><div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Scripting et automatisation</li>
                                 </ul>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold mb-4 opacity-90 border-b border-white/20 pb-2">Résultats
-                                    obtenus</h4>
+                                <h4 class="text-xl font-bold mb-4 opacity-90 border-b border-white/20 pb-2">Résultats obtenus</h4>
                                 <ul class="space-y-3">
-                                    <li class="flex items-center">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Sécurisation complète
-                                        des serveurs critiques
-                                    </li>
-                                    <li class="flex items-center">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Réduction des temps de
-                                        connexion de 60%
-                                    </li>
-                                    <li class="flex items-center">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Automatisation de 80%
-                                        des tâches d'administration
-                                    </li>
-                                    <li class="flex items-center">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Amélioration de la
-                                        stabilité du système
-                                    </li>
-                                    <li class="flex items-center">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Formation des équipes
-                                        sur les nouveaux outils
-                                    </li>
+                                    <li class="flex items-center"><div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Sécurisation complète des serveurs critiques</li>
+                                    <li class="flex items-center"><div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Réduction des temps de connexion de 60%</li>
+                                    <li class="flex items-center"><div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Automatisation de 80% des tâches d'administration</li>
+                                    <li class="flex items-center"><div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Amélioration de la stabilité du système</li>
+                                    <li class="flex items-center"><div class="w-1.5 h-1.5 rounded-full bg-white mr-3"></div>Formation des équipes sur les nouveaux outils</li>
                                 </ul>
                             </div>
                         </div>
@@ -559,44 +328,116 @@
                 </div>
             </section>
 
-            <section class="mb-24">
-                <div class="flex items-center mb-12">
-                    <div
-                        class="w-12 h-12 rounded-xl bg-indigo-500 text-white flex items-center justify-center font-bold text-xl mr-4 shadow-lg shadow-indigo-500/30">
-                        2</div>
-                    <h2 class="text-4xl font-extrabold">Alternance</h2>
+            <section class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 shadow-xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-bl-full -z-10"></div>
+                <div class="flex items-center mb-8 border-b border-slate-200 dark:border-slate-800 pb-6">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500 text-white flex items-center justify-center font-bold text-xl mr-4 shadow-lg shadow-indigo-500/30">2</div>
+                    <h2 class="text-3xl font-extrabold">Alternance</h2>
                 </div>
 
-                <div
-                    class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-16 shadow-xl text-center">
-                    <p class="text-xl text-slate-500 dark:text-slate-400">
-                        Contenu à venir...
-                    </p>
+                <div class="mb-12 border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-900/20 p-6 rounded-r-xl">
+                    <h4 class="text-amber-800 dark:text-amber-400 font-bold mb-2 flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Alternance en cours
+                    </h4>
+                    <p class="text-amber-700 dark:text-amber-500/80 text-sm">Mon année d'alternance est actuellement en cours. Les informations présentées ci-dessous constituent une synthèse des missions réalisées à ce jour. Le bilan complet ainsi que les détails techniques définitifs seront ajoutés à la fin du mois de septembre.</p>
+                </div>
+                
+                <div class="space-y-12">
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-indigo-500">1. Administration Système & Déploiement</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6">
+                            Gestion quotidienne du parc informatique, maintien en condition opérationnelle des serveurs, et automatisation des processus de déploiement pour les utilisateurs du campus.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800">
+                                <h4 class="font-bold mb-3 text-lg">Gestion Active Directory & GPO</h4>
+                                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <li>Mise à jour et nettoyage de l'annuaire via l'import de bases de données (Charlemagne, SimplyDesk).</li>
+                                    <li>Optimisation des temps de chargement de sessions.</li>
+                                    <li>Déploiement logiciel automatisé par stratégies de groupe (Firefox ESR, Veyon pour les salles informatiques).</li>
+                                </ul>
+                            </div>
+                            <div class="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800">
+                                <h4 class="font-bold mb-3 text-lg">Maintenance & Scripting</h4>
+                                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <li>Interventions matérielles (changement SSD sur SambaEdu, réparation NAS).</li>
+                                    <li>Création de scripts d'automatisation (NTP, synchronisation d'heures).</li>
+                                    <li>Conception et intégration d'un exécutable pour l'installation silencieuse de pilotes d'imprimantes (Universal V4 PCL).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-indigo-500 pt-6 border-t border-slate-100 dark:border-slate-800">2. Infrastructure Réseau & Télécommunications</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                            <div class="space-y-4">
+                                <p class="text-slate-600 dark:text-slate-400 text-sm">
+                                    Optimisation de la segmentation du réseau local, renforcement des accès sans-fil et intégration de matériel de sécurité physique.
+                                </p>
+                                <ul class="space-y-3 text-sm text-slate-700 dark:text-slate-300">
+                                    <li class="flex items-start"><span class="text-indigo-500 mr-2 mt-0.5">▹</span> <strong>Réseau Sans-Fil :</strong> Implémentation et configuration d'un serveur FreeRADIUS. Création de profils sécurisés et gestion de réseaux isolés (invités, bureau des soins).</li>
+                                    <li class="flex items-start"><span class="text-indigo-500 mr-2 mt-0.5">▹</span> <strong>Analyse & Supervision :</strong> Réalisation de scans réseaux ciblés (Nmap) sur divers VLANs (Direction, Étudiants, Profs, IoT) et ajustement des profils de sécurité du pare-feu.</li>
+                                    <li class="flex items-start"><span class="text-indigo-500 mr-2 mt-0.5">▹</span> <strong>Matériel :</strong> Déploiement de bornes Wi-Fi et mise en place d'un réseau de caméras de vidéosurveillance (Ethernet et Wifi Solaire).</li>
+                                </ul>
+                            </div>
+                            <div class="relative min-h-[200px] bg-slate-200 dark:bg-slate-700 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800">
+                                <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1000" alt="Câblage réseau" class="absolute inset-0 w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-indigo-500 pt-6 border-t border-slate-100 dark:border-slate-800">3. Cybersécurité & Prévention</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6">
+                            Analyse de menaces réelles, réponse à incident et élaboration de campagnes de sensibilisation au phishing pour le personnel.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="project-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 transition-all hover:shadow-md">
+                                <h4 class="font-bold mb-3 text-lg flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                    Réponse à Incident & Rétro-ingénierie
+                                </h4>
+                                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <li>Audit complet suite à la détection d'un email de phishing.</li>
+                                    <li>Analyse de dangerosité d'un script malveillant (déchiffrement du code, compréhension de son exécution).</li>
+                                    <li>Création et application de règles YARA pour détecter efficacement de futures menaces.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="project-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 transition-all hover:shadow-md">
+                                <h4 class="font-bold mb-3 text-lg flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                    Campagne de Phishing & Formation
+                                </h4>
+                                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <li>Mise en place d'une infrastructure de simulation avec Evilginx (Reverse Proxy).</li>
+                                    <li>Configuration des certificats SSL et de l'architecture DNS (Bind9, CloudDNS, Dnsmasq).</li>
+                                    <li>Analyse des mécanismes de *Token Grab* M365 (Azure AD) et rédaction de politiques de contre-mesures (Moindre privilège, Conditional Access).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
         </div>
     </main>
 
-    <footer
-        class="mt-auto w-full border-t border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md py-8">
+    <footer class="mt-auto w-full border-t border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md py-8">
         <div class="max-w-7xl mx-auto px-4 flex justify-center space-x-6 md:space-x-8">
-            <a href="index.html"
-                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Accueil</a>
-            <a href="parcour.html"
-                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Parcour</a>
-            <a href="projets.html"
-                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Projets</a>
-            <a href="experiences.html"
-                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Expériences</a>
-            <a href="passions.html"
-                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Passions</a>
-            <a href="contact.html"
-                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Contactez
-                moi</a>
+            <a href="index.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Accueil</a>
+            <a href="parcours.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Parcours</a>
+            <a href="projets.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Projets</a>
+            <a href="experiences.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Expériences</a>
+            <a href="passions.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Passions</a>
+            <a href="contact.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Contactez moi</a>
         </div>
     </footer>
     <script src="script.js"></script>
 </body>
-
 </html>
