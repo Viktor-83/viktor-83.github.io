@@ -1,223 +1,324 @@
 <!DOCTYPE html>
 <html lang="en" class="dark scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Victor HACQUE--RANQUE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { brand: { 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb' } }, animation: { 'fade-in-up': 'fadeInUp 0.8s ease-out forwards' } } } }
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#dbeafe',
+                            100: '#bfdbfe',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb'
+                        }
+                    },
+                    animation: { 'fade-in-up': 'fadeInUp 0.8s ease-out forwards' }
+                }
+            }
+        }
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 font-sans antialiased transition-colors duration-300 flex flex-col min-h-screen">
-    
-    <nav class="fixed w-full z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
+
+<body
+    class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 font-sans antialiased transition-colors duration-300 flex flex-col min-h-screen">
+
+    <nav
+        class="fixed w-full z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center w-full">
             <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 dark:text-slate-400 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
             </button>
             <div class="hidden md:flex space-x-1">
-                <a href="index_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Home</a>
-                <a href="parcour_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Background</a>
-                <a href="projets_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Projects</a>
-                <a href="experiences_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Experiences</a>
-                <a href="passions_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Passions</a>
-                <a href="contact_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Contact</a>
+                <a href="index_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Home</a>
+                <a href="parcour_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Background</a>
+                <a href="projets_eng.html"
+                    class="px-4 py-2 rounded-lg bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 font-semibold transition-all">Projects</a>
+                <a href="experiences_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Experiences</a>
+                <a href="passions_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Passions</a>
+                <a href="contact_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Contact</a>
             </div>
             <div class="flex items-center space-x-3 ml-auto md:ml-0">
-                <button id="lang-toggle" class="px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform font-bold text-sm flex items-center">
+                <button id="lang-toggle"
+                    class="px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform font-bold text-sm flex items-center">
                     FR
                 </button>
-                <button id="theme-toggle" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform" aria-label="Change theme">
-                    <svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-                    <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+                <button id="theme-toggle"
+                    class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform"
+                    aria-label="Change theme">
+                    <svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            clip-rule="evenodd"></path>
+                    </svg>
                 </button>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-xl">
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-20 left-0 w-full bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-xl">
             <div class="flex flex-col items-center py-6 space-y-4">
-               <a href="index_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Home</a>
-                <a href="parcour_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Background</a>
-                <a href="projets_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Projects</a>
-                <a href="experiences_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Experiences</a>
-                <a href="passions_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Passions</a>
-                <a href="contact_eng.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Contact</a>
+                <a href="index_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Home</a>
+                <a href="parcour_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Background</a>
+                <a href="projets_eng.html"
+                    class="px-4 py-2 rounded-lg bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 font-semibold transition-all w-3/4 text-center">Projects</a>
+                <a href="experiences_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Experiences</a>
+                <a href="passions_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Passions</a>
+                <a href="contact_eng.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Contact</a>
             </div>
         </div>
     </nav>
 
     <main class="flex-grow pt-32 pb-32 px-6 max-w-5xl mx-auto w-full opacity-0 animate-fade-in-up">
         <h1 class="text-4xl md:text-5xl font-extrabold mb-16">Tutored & Personal Projects</h1>
-        
+
         <div class="space-y-6">
 
-            <div class="project-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:shadow-xl transition-all cursor-pointer">
+            <div
+                class="project-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:shadow-xl transition-all cursor-pointer">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold">Escape from Tarkov Server Deployment (SPT / Headless)</h2>
-                    <div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
-                        <svg class="w-5 h-5 transform transition-transform group-hover:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                    <div
+                        class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                        <svg class="w-5 h-5 transform transition-transform group-hover:rotate-45" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4">
+                            </path>
+                        </svg>
                     </div>
                 </div>
                 <div class="project-content overflow-hidden max-h-0 opacity-0 transition-all duration-500">
                     <p class="mt-4 text-slate-600 dark:text-slate-400 font-medium">
-                        Setup of an optimized server infrastructure to host a private multiplayer session of the game Escape From Tarkov via the SPT (Single Player Tarkov) emulator.
+                        Setup of an optimized server infrastructure to host a private multiplayer session of the game
+                        Escape From Tarkov via the SPT (Single Player Tarkov) emulator.
                     </p>
                     <ul class="list-none space-y-4 mt-6 text-slate-600 dark:text-slate-400">
                         <li class="flex items-start">
-                            <span class="text-brand-500 mr-3 mt-1">▹</span> 
+                            <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Headless Environment:</strong> Configuration of a dedicated server without a graphical interface (command line) to free up processing power (RAM/CPU) for game hosting.
+                                <strong class="text-slate-900 dark:text-white">Headless Environment:</strong>
+                                Configuration of a dedicated server without a graphical interface (command line) to free
+                                up processing power (RAM/CPU) for game hosting.
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-brand-500 mr-3 mt-1">▹</span> 
+                            <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Emulation & Modding:</strong> Installation of the SPT framework (which emulates the complex backend architecture of the original game) and integration of network mods to allow private cooperation.
+                                <strong class="text-slate-900 dark:text-white">Emulation & Modding:</strong>
+                                Installation of the SPT framework (which emulates the complex backend architecture of
+                                the original game) and integration of network mods to allow private cooperation.
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-brand-500 mr-3 mt-1">▹</span> 
+                            <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Network Administration:</strong> Connectivity management via specific port forwarding, firewall configuration, and access security for remote players.
+                                <strong class="text-slate-900 dark:text-white">Network Administration:</strong>
+                                Connectivity management via specific port forwarding, firewall configuration, and access
+                                security for remote players.
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-brand-500 mr-3 mt-1">▹</span> 
+                            <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Server Maintenance:</strong> Full remote administration via SSH and centralized management of player database backups.
+                                <strong class="text-slate-900 dark:text-white">Server Maintenance:</strong> Full remote
+                                administration via SSH and centralized management of player database backups.
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="project-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:shadow-xl transition-all cursor-pointer">
+
+            <div
+                class="project-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:shadow-xl transition-all cursor-pointer">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold">Mobile Chat Application</h2>
-                    <div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
-                        <svg class="w-5 h-5 transform transition-transform group-hover:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                    <div
+                        class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                        <svg class="w-5 h-5 transform transition-transform group-hover:rotate-45" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4">
+                            </path>
+                        </svg>
                     </div>
                 </div>
                 <div class="project-content overflow-hidden max-h-0 opacity-0 transition-all duration-500">
                     <p class="mt-4 text-slate-600 dark:text-slate-400 font-medium">
-                        Design and development of a client-server instant messaging solution, focusing on secure exchanges.
+                        Design and development of a client-server instant messaging solution, focusing on secure
+                        exchanges.
                     </p>
                     <ul class="list-none space-y-4 mt-6 text-slate-600 dark:text-slate-400">
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Server Architecture:</strong> Implementation of a robust TCP server in Python for managing multiple connections.
+                                <strong class="text-slate-900 dark:text-white">Server Architecture:</strong>
+                                Implementation of a robust TCP server in Python for managing multiple connections.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Cryptography:</strong> Securing data streams by integrating the cryptography/Fernet module for message encryption.
+                                <strong class="text-slate-900 dark:text-white">Cryptography:</strong> Securing data
+                                streams by integrating the cryptography/Fernet module for message encryption.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Client Development:</strong> Creation of the mobile interface and communication logic with the Kivy framework.
+                                <strong class="text-slate-900 dark:text-white">Client Development:</strong> Creation of
+                                the mobile interface and communication logic with the Kivy framework.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Mobile Deployment:</strong> Compilation of the project into an APK application using the Buildozer tool for installation on an Android environment.
+                                <strong class="text-slate-900 dark:text-white">Mobile Deployment:</strong> Compilation
+                                of the project into an APK application using the Buildozer tool for installation on an
+                                Android environment.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Management & DevOps:</strong> Implementation of authentication via SQLite database, detailed documentation, and use of GitHub/GitLab for versioning.
+                                <strong class="text-slate-900 dark:text-white">Management & DevOps:</strong>
+                                Implementation of authentication via SQLite database, detailed documentation, and use of
+                                GitHub/GitLab for versioning.
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="project-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:shadow-xl transition-all cursor-pointer">
+            <div
+                class="project-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:shadow-xl transition-all cursor-pointer">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold">Enterprise Aggregation Solution</h2>
-                    <div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
-                        <svg class="w-5 h-5 transform transition-transform group-hover:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                    <div
+                        class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                        <svg class="w-5 h-5 transform transition-transform group-hover:rotate-45" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4">
+                            </path>
+                        </svg>
                     </div>
                 </div>
                 <div class="project-content overflow-hidden max-h-0 opacity-0 transition-all duration-500">
                     <p class="mt-4 text-slate-600 dark:text-slate-400 font-medium">
-                        Creation of an automated platform to collect, process, and present data from external feeds in a centralized manner.
+                        Creation of an automated platform to collect, process, and present data from external feeds in a
+                        centralized manner.
                     </p>
                     <ul class="list-none space-y-4 mt-6 text-slate-600 dark:text-slate-400">
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Data Collection:</strong> Development of a Python script dedicated to querying and aggregating multiple RSS feeds.
+                                <strong class="text-slate-900 dark:text-white">Data Collection:</strong> Development of
+                                a Python script dedicated to querying and aggregating multiple RSS feeds.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Processing & Storage:</strong> Structuring and long-term saving of obtained data in interoperable standard formats (JSON, YAML).
+                                <strong class="text-slate-900 dark:text-white">Processing & Storage:</strong>
+                                Structuring and long-term saving of obtained data in interoperable standard formats
+                                (JSON, YAML).
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Web Interface:</strong> Formatting and dynamic presentation of collected information on a modern HTML5 page.
+                                <strong class="text-slate-900 dark:text-white">Web Interface:</strong> Formatting and
+                                dynamic presentation of collected information on a modern HTML5 page.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">System Administration:</strong> Deployment and full management of a web server machine and the aggregator in a secure Linux environment (SSH).
+                                <strong class="text-slate-900 dark:text-white">System Administration:</strong>
+                                Deployment and full management of a web server machine and the aggregator in a secure
+                                Linux environment (SSH).
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="project-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:shadow-xl transition-all cursor-pointer">
+            <div
+                class="project-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:shadow-xl transition-all cursor-pointer">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold">Network & IoT Architecture</h2>
-                    <div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
-                        <svg class="w-5 h-5 transform transition-transform group-hover:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                    <div
+                        class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                        <svg class="w-5 h-5 transform transition-transform group-hover:rotate-45" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4">
+                            </path>
+                        </svg>
                     </div>
                 </div>
                 <div class="project-content overflow-hidden max-h-0 opacity-0 transition-all duration-500">
                     <p class="mt-4 text-slate-600 dark:text-slate-400 font-medium">
-                        Construction of a network infrastructure combining advanced server monitoring and data collection from physical sensors (IoT).
+                        Construction of a network infrastructure combining advanced server monitoring and data
+                        collection from physical sensors (IoT).
                     </p>
                     <ul class="list-none space-y-4 mt-6 text-slate-600 dark:text-slate-400">
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Remote Administration:</strong> Establishing a secure SSH connection to a remote server from a Linux VM, including specific configuration of the hosts/config file.
+                                <strong class="text-slate-900 dark:text-white">Remote Administration:</strong>
+                                Establishing a secure SSH connection to a remote server from a Linux VM, including
+                                specific configuration of the hosts/config file.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">IoT Telemetry:</strong> Configuration of a Raspberry Pi microcomputer as a message broker (Mosquitto) for weather data retrieval.
+                                <strong class="text-slate-900 dark:text-white">IoT Telemetry:</strong> Configuration of
+                                a Raspberry Pi microcomputer as a message broker (Mosquitto) for weather data retrieval.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Monitoring:</strong> Setup of comprehensive dashboards with Grafana to ensure continuous monitoring of VMs and the host server's status.
+                                <strong class="text-slate-900 dark:text-white">Monitoring:</strong> Setup of
+                                comprehensive dashboards with Grafana to ensure continuous monitoring of VMs and the
+                                host server's status.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Graphic Visualization:</strong> Integration and dynamic display of real-time data via HTML5/CSS graphs.
+                                <strong class="text-slate-900 dark:text-white">Graphic Visualization:</strong>
+                                Integration and dynamic display of real-time data via HTML5/CSS graphs.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Versioning:</strong> Repository, documentation, and continuous management of the project's source code using the GitLab platform.
+                                <strong class="text-slate-900 dark:text-white">Versioning:</strong> Repository,
+                                documentation, and continuous management of the project's source code using the GitLab
+                                platform.
                             </div>
                         </li>
                     </ul>
@@ -227,16 +328,25 @@
         </div>
     </main>
 
-    <footer class="mt-auto w-full border-t border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md py-8">
+    <footer
+        class="mt-auto w-full border-t border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md py-8">
         <div class="max-w-7xl mx-auto px-4 flex justify-center space-x-6 md:space-x-8">
-            <a href="index_eng.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Home</a>
-            <a href="parcour_eng.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Background</a>
-            <a href="projets_eng.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Projects</a>
-            <a href="experiences_eng.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Experiences</a>
-            <a href="passions_eng.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Passions</a>
-            <a href="contact_eng.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Contact me</a>
+            <a href="index_eng.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Home</a>
+            <a href="parcour_eng.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Background</a>
+            <a href="projets_eng.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Projects</a>
+            <a href="experiences_eng.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Experiences</a>
+            <a href="passions_eng.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Passions</a>
+            <a href="contact_eng.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Contact
+                me</a>
         </div>
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
