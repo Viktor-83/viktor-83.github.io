@@ -1,223 +1,330 @@
 <!DOCTYPE html>
 <html lang="fr" class="dark scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projets | Victor HACQUE--RANQUE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { brand: { 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb' } }, animation: { 'fade-in-up': 'fadeInUp 0.8s ease-out forwards' } } } }
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#dbeafe',
+                            100: '#bfdbfe',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb'
+                        }
+                    },
+                    animation: { 'fade-in-up': 'fadeInUp 0.8s ease-out forwards' }
+                }
+            }
+        }
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 font-sans antialiased transition-colors duration-300 flex flex-col min-h-screen">
-    
-    <nav class="fixed w-full z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
+
+<body
+    class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 font-sans antialiased transition-colors duration-300 flex flex-col min-h-screen">
+
+    <nav
+        class="fixed w-full z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center w-full">
             <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 dark:text-slate-400 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
             </button>
             <div class="hidden md:flex space-x-1">
-                <a href="index.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Accueil</a>
-                <a href="parcour.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Parcour</a>
-                <a href="projets.html" class="px-4 py-2 rounded-lg bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 font-semibold transition-all">Projets</a>
-                <a href="experiences.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Expériences</a>
-                <a href="passions.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Passions</a>
-                <a href="contact.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Contact</a>
+                <a href="index.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Accueil</a>
+                <a href="parcour.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Parcour</a>
+                <a href="projets.html"
+                    class="px-4 py-2 rounded-lg bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 font-semibold transition-all">Projets</a>
+                <a href="experiences.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Expériences</a>
+                <a href="passions.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Passions</a>
+                <a href="contact.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all">Contact</a>
             </div>
             <div class="flex items-center space-x-3 ml-auto md:ml-0">
-                <button id="lang-toggle" class="px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform font-bold text-sm flex items-center">
+                <button id="lang-toggle"
+                    class="px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform font-bold text-sm flex items-center">
                     EN
                 </button>
-                <button id="theme-toggle" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform" aria-label="Changer le thème">
-                    <svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-                    <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+                <button id="theme-toggle"
+                    class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:scale-105 transition-transform"
+                    aria-label="Changer le thème">
+                    <svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            clip-rule="evenodd"></path>
+                    </svg>
                 </button>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-xl">
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-20 left-0 w-full bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-xl">
             <div class="flex flex-col items-center py-6 space-y-4">
-                <a href="index.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Accueil</a>
-                <a href="parcour.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Parcour</a>
-                <a href="projets.html" class="px-4 py-2 rounded-lg bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 font-semibold transition-all w-3/4 text-center">Projets</a>
-                <a href="experiences.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Expériences</a>
-                <a href="passions.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Passions</a>
-                <a href="contact.html" class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Contact</a>
+                <a href="index.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Accueil</a>
+                <a href="parcour.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Parcour</a>
+                <a href="projets.html"
+                    class="px-4 py-2 rounded-lg bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 font-semibold transition-all w-3/4 text-center">Projets</a>
+                <a href="experiences.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Expériences</a>
+                <a href="passions.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Passions</a>
+                <a href="contact.html"
+                    class="px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all w-3/4 text-center">Contact</a>
             </div>
         </div>
     </nav>
 
     <main class="flex-grow pt-32 pb-24 px-6 max-w-5xl mx-auto w-full opacity-0 animate-fade-in-up">
         <h1 class="text-4xl md:text-5xl font-extrabold mb-16 text-center">Projets Tuteurés & Personnels</h1>
-        
+
         <div class="space-y-6">
 
-            <div class="project-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:shadow-xl transition-all cursor-pointer">
+            <div
+                class="project-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:shadow-xl transition-all cursor-pointer">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold">Serveur Escape from Tarkov (SPT / Headless)</h2>
-                    <div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
-                        <svg class="w-5 h-5 transform transition-transform group-hover:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                    <div
+                        class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                        <svg class="w-5 h-5 transform transition-transform group-hover:rotate-45" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4">
+                            </path>
+                        </svg>
                     </div>
                 </div>
                 <div class="project-content overflow-hidden max-h-0 opacity-0 transition-all duration-500">
                     <p class="mt-4 text-slate-600 dark:text-slate-400 font-medium">
-                        Mise en place d'une infrastructure serveur optimisée pour héberger une session multijoueur privée du jeu Escape From Tarkov via l'émulateur SPT (Single Player Tarkov).
+                        Mise en place d'une infrastructure serveur optimisée pour héberger une session multijoueur
+                        privée du jeu Escape From Tarkov via l'émulateur SPT (Single Player Tarkov).
                     </p>
                     <ul class="list-none space-y-4 mt-6 text-slate-600 dark:text-slate-400">
                         <li class="flex items-start">
-                            <span class="text-brand-500 mr-3 mt-1">▹</span> 
+                            <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Environnement Headless :</strong> Configuration d'un serveur dédié sans interface graphique (en ligne de commande) afin de libérer la puissance de calcul (RAM/CPU) pour l'hébergement du jeu.
+                                <strong class="text-slate-900 dark:text-white">Environnement Headless :</strong>
+                                Configuration d'un serveur dédié sans interface graphique (en ligne de commande) afin de
+                                libérer la puissance de calcul (RAM/CPU) pour l'hébergement du jeu.
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-brand-500 mr-3 mt-1">▹</span> 
+                            <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Emulation & Modding :</strong> Installation du framework SPT (qui émule l'architecture backend complexe du jeu d'origine) et intégration de mods réseau pour permettre la coopération privée.
+                                <strong class="text-slate-900 dark:text-white">Emulation & Modding :</strong>
+                                Installation du framework SPT (qui émule l'architecture backend complexe du jeu
+                                d'origine) et intégration de mods réseau pour permettre la coopération privée.
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-brand-500 mr-3 mt-1">▹</span> 
+                            <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Administration Réseau :</strong> Gestion de la connectivité via l'ouverture des ports spécifiques (Port Forwarding), configuration du pare-feu, et sécurisation des accès pour les joueurs distants.
+                                <strong class="text-slate-900 dark:text-white">Administration Réseau :</strong> Gestion
+                                de la connectivité via l'ouverture des ports spécifiques (Port Forwarding),
+                                configuration du pare-feu, et sécurisation des accès pour les joueurs distants.
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-brand-500 mr-3 mt-1">▹</span> 
+                            <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Maintenance Serveur :</strong> Administration complète à distance via SSH et gestion centralisée des sauvegardes de la base de données des joueurs.
+                                <strong class="text-slate-900 dark:text-white">Maintenance Serveur :</strong>
+                                Administration complète à distance via SSH et gestion centralisée des sauvegardes de la
+                                base de données des joueurs.
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="project-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:shadow-xl transition-all cursor-pointer">
+
+            <div
+                class="project-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:shadow-xl transition-all cursor-pointer">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold">Application de chat mobile</h2>
-                    <div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
-                        <svg class="w-5 h-5 transform transition-transform group-hover:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                    <div
+                        class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                        <svg class="w-5 h-5 transform transition-transform group-hover:rotate-45" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4">
+                            </path>
+                        </svg>
                     </div>
                 </div>
                 <div class="project-content overflow-hidden max-h-0 opacity-0 transition-all duration-500">
                     <p class="mt-4 text-slate-600 dark:text-slate-400 font-medium">
-                        Conception et développement d'une solution de messagerie instantanée client-serveur, axée sur la sécurisation des échanges.
+                        Conception et développement d'une solution de messagerie instantanée client-serveur, axée sur la
+                        sécurisation des échanges.
                     </p>
                     <ul class="list-none space-y-4 mt-6 text-slate-600 dark:text-slate-400">
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Architecture Serveur :</strong> Implémentation d'un serveur TCP robuste en Python pour la gestion de connexions multiples.
+                                <strong class="text-slate-900 dark:text-white">Architecture Serveur :</strong>
+                                Implémentation d'un serveur TCP robuste en Python pour la gestion de connexions
+                                multiples.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Cryptographie :</strong> Sécurisation des flux de données via l'intégration du module cryptography/Fernet pour le chiffrement des messages.
+                                <strong class="text-slate-900 dark:text-white">Cryptographie :</strong> Sécurisation des
+                                flux de données via l'intégration du module cryptography/Fernet pour le chiffrement des
+                                messages.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Développement Client :</strong> Création de l'interface mobile et de la logique de communication avec le framework Kivy.
+                                <strong class="text-slate-900 dark:text-white">Développement Client :</strong> Création
+                                de l'interface mobile et de la logique de communication avec le framework Kivy.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Déploiement Mobile :</strong> Compilation du projet en application APK avec l'outil Buildozer pour une installation sur environnement Android.
+                                <strong class="text-slate-900 dark:text-white">Déploiement Mobile :</strong> Compilation
+                                du projet en application APK avec l'outil Buildozer pour une installation sur
+                                environnement Android.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Gestion & DevOps :</strong> Mise en place d'une authentification via base de données SQLite, documentation détaillée et utilisation de GitHub/GitLab pour le versioning.
+                                <strong class="text-slate-900 dark:text-white">Gestion & DevOps :</strong> Mise en place
+                                d'une authentification via base de données SQLite, documentation détaillée et
+                                utilisation de GitHub/GitLab pour le versioning.
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="project-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:shadow-xl transition-all cursor-pointer">
+            <div
+                class="project-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:shadow-xl transition-all cursor-pointer">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold">Solution d'agrégation d'entreprise</h2>
-                    <div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
-                        <svg class="w-5 h-5 transform transition-transform group-hover:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                    <div
+                        class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                        <svg class="w-5 h-5 transform transition-transform group-hover:rotate-45" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4">
+                            </path>
+                        </svg>
                     </div>
                 </div>
                 <div class="project-content overflow-hidden max-h-0 opacity-0 transition-all duration-500">
                     <p class="mt-4 text-slate-600 dark:text-slate-400 font-medium">
-                        Création d'une plateforme automatisée permettant de collecter, de traiter et de restituer des données issues de flux externes de manière centralisée.
+                        Création d'une plateforme automatisée permettant de collecter, de traiter et de restituer des
+                        données issues de flux externes de manière centralisée.
                     </p>
                     <ul class="list-none space-y-4 mt-6 text-slate-600 dark:text-slate-400">
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Collecte de Données :</strong> Développement d'un script en Python dédié à l'interrogation et l'agrégation de multiples flux RSS.
+                                <strong class="text-slate-900 dark:text-white">Collecte de Données :</strong>
+                                Développement d'un script en Python dédié à l'interrogation et l'agrégation de multiples
+                                flux RSS.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Traitement & Stockage :</strong> Structuration et sauvegarde pérenne des données obtenues sous formats standards interopérables (JSON, YAML).
+                                <strong class="text-slate-900 dark:text-white">Traitement & Stockage :</strong>
+                                Structuration et sauvegarde pérenne des données obtenues sous formats standards
+                                interopérables (JSON, YAML).
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Interface Web :</strong> Mise en forme et présentation dynamique des informations collectées sur une page HTML5 moderne.
+                                <strong class="text-slate-900 dark:text-white">Interface Web :</strong> Mise en forme et
+                                présentation dynamique des informations collectées sur une page HTML5 moderne.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Administration Système :</strong> Déploiement et gestion complète d'une machine serveur web et de l'agrégateur sous un environnement Linux sécurisé (SSH).
+                                <strong class="text-slate-900 dark:text-white">Administration Système :</strong>
+                                Déploiement et gestion complète d'une machine serveur web et de l'agrégateur sous un
+                                environnement Linux sécurisé (SSH).
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="project-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:shadow-xl transition-all cursor-pointer">
+            <div
+                class="project-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:shadow-xl transition-all cursor-pointer">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold">Architecture Réseau & IoT</h2>
-                    <div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
-                        <svg class="w-5 h-5 transform transition-transform group-hover:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                    <div
+                        class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                        <svg class="w-5 h-5 transform transition-transform group-hover:rotate-45" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4">
+                            </path>
+                        </svg>
                     </div>
                 </div>
                 <div class="project-content overflow-hidden max-h-0 opacity-0 transition-all duration-500">
                     <p class="mt-4 text-slate-600 dark:text-slate-400 font-medium">
-                        Construction d'une infrastructure réseau combinant la supervision avancée de serveurs et la remontée de données issues de capteurs physiques (IoT).
+                        Construction d'une infrastructure réseau combinant la supervision avancée de serveurs et la
+                        remontée de données issues de capteurs physiques (IoT).
                     </p>
                     <ul class="list-none space-y-4 mt-6 text-slate-600 dark:text-slate-400">
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Administration Distante :</strong> Établissement d'une connexion SSH sécurisée vers un serveur distant depuis une VM Linux, incluant la configuration spécifique du fichier hosts/config.
+                                <strong class="text-slate-900 dark:text-white">Administration Distante :</strong>
+                                Établissement d'une connexion SSH sécurisée vers un serveur distant depuis une VM Linux,
+                                incluant la configuration spécifique du fichier hosts/config.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Télémétrie IoT :</strong> Configuration d'un nano-ordinateur Raspberry Pi en tant que broker de messagerie (Mosquitto) pour la récupération de données météorologiques.
+                                <strong class="text-slate-900 dark:text-white">Télémétrie IoT :</strong> Configuration
+                                d'un nano-ordinateur Raspberry Pi en tant que broker de messagerie (Mosquitto) pour la
+                                récupération de données météorologiques.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Monitoring :</strong> Mise en place de tableaux de bord complets avec Grafana pour assurer la surveillance continue des VMs et de l'état du serveur hôte.
+                                <strong class="text-slate-900 dark:text-white">Monitoring :</strong> Mise en place de
+                                tableaux de bord complets avec Grafana pour assurer la surveillance continue des VMs et
+                                de l'état du serveur hôte.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Visualisation Graphique :</strong> Intégration et affichage dynamique des données en temps réel via des graphiques en HTML5/CSS.
+                                <strong class="text-slate-900 dark:text-white">Visualisation Graphique :</strong>
+                                Intégration et affichage dynamique des données en temps réel via des graphiques en
+                                HTML5/CSS.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-brand-500 mr-3 mt-1">▹</span>
                             <div>
-                                <strong class="text-slate-900 dark:text-white">Versioning :</strong> Dépôt, documentation et gestion continue du code source du projet en utilisant la plateforme GitLab.
+                                <strong class="text-slate-900 dark:text-white">Versioning :</strong> Dépôt,
+                                documentation et gestion continue du code source du projet en utilisant la plateforme
+                                GitLab.
                             </div>
                         </li>
                     </ul>
@@ -227,16 +334,25 @@
         </div>
     </main>
 
-    <footer class="mt-auto w-full border-t border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md py-8">
+    <footer
+        class="mt-auto w-full border-t border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md py-8">
         <div class="max-w-7xl mx-auto px-4 flex justify-center space-x-6 md:space-x-8">
-            <a href="index.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Accueil</a>
-            <a href="parcour.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Parcour</a>
-            <a href="projets.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Projets</a>
-            <a href="experiences.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Expériences</a>
-            <a href="passions.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Passions</a>
-            <a href="contact.html" class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Contactez moi</a>
+            <a href="index.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Accueil</a>
+            <a href="parcour.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Parcour</a>
+            <a href="projets.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Projets</a>
+            <a href="experiences.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Expériences</a>
+            <a href="passions.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Passions</a>
+            <a href="contact.html"
+                class="text-xs md:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors">Contactez
+                moi</a>
         </div>
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
