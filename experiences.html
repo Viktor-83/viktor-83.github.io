@@ -340,7 +340,7 @@
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                         Alternance en cours
                     </h4>
-                    <p class="text-amber-700 dark:text-amber-500/80 text-sm">Mon année d'alternance est actuellement en cours. Les informations présentées ci-dessous constituent une synthèse des missions réalisées à ce jour. Le bilan complet ainsi que les détails techniques définitifs seront ajoutés à la fin du mois de septembre.</p>
+                    <p class="text-amber-700 dark:text-amber-500/80 text-sm">Mon année d'alternance est actuellement en cours. Les informations présentées ci-dessous constituent une synthèse des missions réalisées à ce jour. Les détails techniques complets et le bilan final seront ajoutés à la fin du mois de septembre.</p>
                 </div>
                 
                 <div class="space-y-12">
@@ -348,23 +348,23 @@
                     <div>
                         <h3 class="text-2xl font-bold mb-6 text-indigo-500">1. Administration Système & Déploiement</h3>
                         <p class="text-slate-600 dark:text-slate-400 mb-6">
-                            Gestion quotidienne du parc informatique, maintien en condition opérationnelle des serveurs, et automatisation des processus de déploiement pour les utilisateurs du campus.
+                            Gestion quotidienne du parc informatique, maintien en condition opérationnelle des serveurs et automatisation des processus de déploiement.
                         </p>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold mb-3 text-lg">Gestion Active Directory & GPO</h4>
-                                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                <h4 class="font-bold mb-3 text-lg">Active Directory & GPO</h4>
+                                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400 list-disc list-inside">
                                     <li>Mise à jour et nettoyage de l'annuaire via l'import de bases de données (Charlemagne, SimplyDesk).</li>
-                                    <li>Optimisation des temps de chargement de sessions.</li>
-                                    <li>Déploiement logiciel automatisé par stratégies de groupe (Firefox ESR, Veyon pour les salles informatiques).</li>
+                                    <li>Déploiement logiciel centralisé par stratégies de groupe (Firefox ESR, Veyon pour les salles informatiques).</li>
+                                    <li>Optimisation globale des temps de chargement des sessions.</li>
                                 </ul>
                             </div>
                             <div class="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800">
                                 <h4 class="font-bold mb-3 text-lg">Maintenance & Scripting</h4>
-                                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                                    <li>Interventions matérielles (changement SSD sur SambaEdu, réparation NAS).</li>
+                                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400 list-disc list-inside">
+                                    <li>Conception et intégration d'un exécutable pour l'installation automatisée de pilotes d'imprimantes (Universal V4 PCL).</li>
                                     <li>Création de scripts d'automatisation (NTP, synchronisation d'heures).</li>
-                                    <li>Conception et intégration d'un exécutable pour l'installation silencieuse de pilotes d'imprimantes (Universal V4 PCL).</li>
+                                    <li>Gestion du stockage : déplacement du serveur NAS et resynchronisation avec Proxmox.</li>
                                 </ul>
                             </div>
                         </div>
@@ -378,13 +378,13 @@
                                     Optimisation de la segmentation du réseau local, renforcement des accès sans-fil et intégration de matériel de sécurité physique.
                                 </p>
                                 <ul class="space-y-3 text-sm text-slate-700 dark:text-slate-300">
-                                    <li class="flex items-start"><span class="text-indigo-500 mr-2 mt-0.5">▹</span> <strong>Réseau Sans-Fil :</strong> Implémentation et configuration d'un serveur FreeRADIUS. Création de profils sécurisés et gestion de réseaux isolés (invités, bureau des soins).</li>
-                                    <li class="flex items-start"><span class="text-indigo-500 mr-2 mt-0.5">▹</span> <strong>Analyse & Supervision :</strong> Réalisation de scans réseaux ciblés (Nmap) sur divers VLANs (Direction, Étudiants, Profs, IoT) et ajustement des profils de sécurité du pare-feu.</li>
-                                    <li class="flex items-start"><span class="text-indigo-500 mr-2 mt-0.5">▹</span> <strong>Matériel :</strong> Déploiement de bornes Wi-Fi et mise en place d'un réseau de caméras de vidéosurveillance (Ethernet et Wifi Solaire).</li>
+                                    <li class="flex items-start"><span class="text-indigo-500 mr-2 mt-0.5">▹</span> <strong>Réseau Sans-Fil :</strong> Implémentation et configuration d'un serveur FreeRADIUS. Sécurisation des accès via des profils dédiés (Invités, Bureau des soins, Ortho 4000+).</li>
+                                    <li class="flex items-start"><span class="text-indigo-500 mr-2 mt-0.5">▹</span> <strong>Analyse & Supervision :</strong> Réalisation de scans réseaux ciblés sur les différents VLANs (Direction, Étudiants, Profs, IoT-BMS) et ajustement des profils de sécurité du pare-feu.</li>
+                                    <li class="flex items-start"><span class="text-indigo-500 mr-2 mt-0.5">▹</span> <strong>Matériel IoT :</strong> Déploiement de bornes Wi-Fi et mise en place d'un réseau de caméras de vidéosurveillance (hybride Ethernet et Wi-Fi Solaire).</li>
                                 </ul>
                             </div>
                             <div class="relative min-h-[200px] bg-slate-200 dark:bg-slate-700 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800">
-                                <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1000" alt="Câblage réseau" class="absolute inset-0 w-full h-full object-cover">
+                                <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1000" alt="Câblage réseau et baies de brassage" class="absolute inset-0 w-full h-full object-cover">
                             </div>
                         </div>
                     </div>
@@ -392,31 +392,31 @@
                     <div>
                         <h3 class="text-2xl font-bold mb-6 text-indigo-500 pt-6 border-t border-slate-100 dark:border-slate-800">3. Cybersécurité & Prévention</h3>
                         <p class="text-slate-600 dark:text-slate-400 mb-6">
-                            Analyse de menaces réelles, réponse à incident et élaboration de campagnes de sensibilisation au phishing pour le personnel.
+                            Analyse de menaces réelles, réponse à incident et élaboration de campagnes techniques de sensibilisation pour le personnel.
                         </p>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="project-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 transition-all hover:shadow-md">
+                            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 transition-all hover:shadow-md">
                                 <h4 class="font-bold mb-3 text-lg flex items-center">
                                     <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                                     Réponse à Incident & Rétro-ingénierie
                                 </h4>
-                                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                                    <li>Audit complet suite à la détection d'un email de phishing.</li>
-                                    <li>Analyse de dangerosité d'un script malveillant (déchiffrement du code, compréhension de son exécution).</li>
-                                    <li>Création et application de règles YARA pour détecter efficacement de futures menaces.</li>
+                                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400 list-disc list-inside">
+                                    <li>Audit de sécurité complet suite à la détection d'un email de phishing.</li>
+                                    <li>Analyse de dangerosité d'un script malveillant (déchiffrement du code et modélisation de son comportement).</li>
+                                    <li>Création et application de règles YARA pour optimiser la détection des menaces à venir.</li>
                                 </ul>
                             </div>
                             
-                            <div class="project-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 transition-all hover:shadow-md">
+                            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 transition-all hover:shadow-md">
                                 <h4 class="font-bold mb-3 text-lg flex items-center">
                                     <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                                    Campagne de Phishing & Formation
+                                    Infrastructure de Phishing
                                 </h4>
-                                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                                    <li>Mise en place d'une infrastructure de simulation avec Evilginx (Reverse Proxy).</li>
-                                    <li>Configuration des certificats SSL et de l'architecture DNS (Bind9, CloudDNS, Dnsmasq).</li>
-                                    <li>Analyse des mécanismes de *Token Grab* M365 (Azure AD) et rédaction de politiques de contre-mesures (Moindre privilège, Conditional Access).</li>
+                                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400 list-disc list-inside">
+                                    <li>Mise en place d'une infrastructure de simulation de phishing avec Evilginx (Reverse Proxy).</li>
+                                    <li>Configuration des certificats SSL et de l'architecture DNS (CloudDNS, Bind9, dnsmasq).</li>
+                                    <li>Étude approfondie des attaques de type <em>Token Grab</em> M365 et élaboration de contre-mesures (Conditional Access, Entra ID Protection).</li>
                                 </ul>
                             </div>
                         </div>
