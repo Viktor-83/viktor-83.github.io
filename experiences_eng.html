@@ -533,19 +533,100 @@
                 </div>
             </section>
 
-            <section class="mb-24">
-                <div class="flex items-center mb-12">
-                    <div
-                        class="w-12 h-12 rounded-xl bg-indigo-500 text-white flex items-center justify-center font-bold text-xl mr-4 shadow-lg shadow-indigo-500/30">
-                        2</div>
-                    <h2 class="text-4xl font-extrabold">Internship</h2>
+            <section class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 shadow-xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-bl-full -z-10"></div>
+                <div class="flex items-center mb-8 border-b border-slate-200 dark:border-slate-800 pb-6">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500 text-white flex items-center justify-center font-bold text-xl mr-4 shadow-lg shadow-indigo-500/30">2</div>
+                    <h2 class="text-3xl font-extrabold">Chapter 2: Work-Study</h2>
                 </div>
 
-                <div
-                    class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-16 shadow-xl text-center">
-                    <p class="text-xl text-slate-500 dark:text-slate-400">
-                        Content coming soon...
-                    </p>
+                <div class="mb-12 border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-900/20 p-6 rounded-r-xl">
+                    <h4 class="text-amber-800 dark:text-amber-400 font-bold mb-2 flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Work-Study in Progress
+                    </h4>
+                    <p class="text-amber-700 dark:text-amber-500/80 text-sm">My work-study year is currently ongoing. The information presented below is a summary of the missions carried out to date. The complete assessment and final technical details will be added at the end of September.</p>
+                </div>
+                
+                <div class="space-y-12">
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-indigo-500">1. System Administration & Deployment</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6">
+                            Daily management of the IT park, operational maintenance of servers, and automation of deployment processes for campus users.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800">
+                                <h4 class="font-bold mb-3 text-lg">Active Directory & GPO Management</h4>
+                                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <li>Directory update and cleanup via database import (Charlemagne, SimplyDesk).</li>
+                                    <li>Optimization of session loading times.</li>
+                                    <li>Automated software deployment via group policies (Firefox ESR, Veyon for computer labs).</li>
+                                </ul>
+                            </div>
+                            <div class="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800">
+                                <h4 class="font-bold mb-3 text-lg">Maintenance & Scripting</h4>
+                                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <li>Hardware interventions (SSD replacement on SambaEdu, NAS repair).</li>
+                                    <li>Creation of automation scripts (NTP, time synchronization).</li>
+                                    <li>Design and integration of an executable for silent installation of printer drivers (Universal V4 PCL).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-indigo-500 pt-6 border-t border-slate-100 dark:border-slate-800">2. Network & Telecommunications Infrastructure</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                            <div class="space-y-4">
+                                <p class="text-slate-600 dark:text-slate-400 text-sm">
+                                    Optimization of local network segmentation, strengthening of wireless access, and integration of physical security equipment.
+                                </p>
+                                <ul class="space-y-3 text-sm text-slate-700 dark:text-slate-300">
+                                    <li class="flex items-start"><span class="text-indigo-500 mr-2 mt-0.5">▹</span> <strong>Wireless Network:</strong> Implementation and configuration of a FreeRADIUS server. Creation of secure profiles and management of isolated networks (guests, nursing office).</li>
+                                    <li class="flex items-start"><span class="text-indigo-500 mr-2 mt-0.5">▹</span> <strong>Analysis & Supervision:</strong> Conducting targeted network scans (Nmap) on various VLANs (Management, Students, Teachers, IoT) and adjusting firewall security profiles.</li>
+                                    <li class="flex items-start"><span class="text-indigo-500 mr-2 mt-0.5">▹</span> <strong>Hardware:</strong> Deployment of Wi-Fi access points and setup of a video surveillance camera network (Ethernet and Solar Wi-Fi).</li>
+                                </ul>
+                            </div>
+                            <div class="relative min-h-[200px] bg-slate-200 dark:bg-slate-700 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800">
+                                <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1000" alt="Network cabling" class="absolute inset-0 w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-indigo-500 pt-6 border-t border-slate-100 dark:border-slate-800">3. Cybersecurity & Prevention</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6">
+                            Analysis of real threats, incident response, and development of phishing awareness campaigns for the staff.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="project-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 transition-all hover:shadow-md">
+                                <h4 class="font-bold mb-3 text-lg flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                    Incident Response & Reverse Engineering
+                                </h4>
+                                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <li>Comprehensive audit following the detection of a phishing email.</li>
+                                    <li>Threat analysis of a malicious script (code decryption, understanding of its execution).</li>
+                                    <li>Creation and application of YARA rules to effectively detect future threats.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="project-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 transition-all hover:shadow-md">
+                                <h4 class="font-bold mb-3 text-lg flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                    Phishing Campaign & Training
+                                </h4>
+                                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <li>Setup of a simulation infrastructure using Evilginx (Reverse Proxy).</li>
+                                    <li>Configuration of SSL certificates and DNS architecture (Bind9, CloudDNS, Dnsmasq).</li>
+                                    <li>Analysis of M365 *Token Grab* mechanisms (Azure AD) and drafting of countermeasure policies (Least privilege, Conditional Access).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
