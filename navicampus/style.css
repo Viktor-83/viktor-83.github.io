@@ -1,0 +1,169 @@
+/* --- LAYOUT GÉNÉRAL --- */
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a2e; /* Couleur de fond par défaut */
+    color: white;
+    transition: background-color 0.3s;
+}
+
+#canvas-container {
+    width: 100%;
+    height: 100%;
+}
+canvas {
+    display: block;
+}
+
+/* --- INTERFACE UTILISATEUR (MENU LATÉRAL) --- */
+#ui-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    width: 300px;
+    color: #333;
+    z-index: 100;
+    /* Transition fluide pour l'ouverture/fermeture */
+    transition: transform 0.3s ease, background-color 0.3s, color 0.3s;
+}
+#ui-container.hidden {
+    transform: translateX(calc(100% + 20px)); /* Cache le menu hors écran */
+}
+
+/* Bouton Toggle (Ouvrir/Fermer) */
+#toggle-menu {
+    position: absolute;
+    top: 20px;
+    right: 340px;
+    background: rgba(15, 52, 96, 0.95);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.37);
+    z-index: 101;
+    transition: all 0.3s ease;
+}
+#toggle-menu:hover {
+    background: rgba(233, 69, 96, 0.95);
+    transform: scale(1.1);
+}
+#toggle-menu.menu-hidden {
+    right: 20px;
+}
+
+/* Éléments de formulaire */
+h1 {
+    margin: 0 0 15px 0;
+    font-size: 1.2rem;
+    color: #16213e;
+    display: flex;
+    align-items: center;
+}
+.icon { margin-right: 10px; font-size: 1.5rem; }
+label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.9rem; }
+input[type="text"], select {
+    width: 100%; padding: 10px; margin-bottom: 15px;
+    border-radius: 8px; border: 1px solid #ccc;
+    font-size: 1rem; box-sizing: border-box; cursor: pointer; 
+}
+button {
+    width: 100%; padding: 12px; background: #0f3460;
+    color: white; border: none; border-radius: 8px;
+    font-size: 1rem; cursor: pointer; transition: background 0.3s;
+    font-weight: bold; margin-bottom: 10px;
+}
+button.secondary { background: #6c757d; }
+button:hover { background: #e94560; }
+button.secondary:hover { background: #5a6268; }
+
+#instructions {
+    margin-top: 15px; font-size: 0.85rem; color: #666;
+    border-top: 1px solid #eee; padding-top: 10px;
+}
+
+/* Étiquettes flottantes sur la carte */
+.label {
+    position: absolute; background: rgba(0, 0, 0, 0.8);
+    color: white; padding: 4px 8px; border-radius: 4px;
+    font-size: 11px; pointer-events: none;
+    transform: translate(-50%, -50%); display: none;
+    white-space: nowrap; z-index: 10; font-weight: bold;
+}
+
+/* Radios et Checkboxes */
+#controls-group {
+    margin-bottom: 15px; padding: 10px;
+    border: 1px solid #eee; border-radius: 8px;
+}
+.radio-group {
+    display: flex; justify-content: space-between;
+    margin-top: 10px; margin-bottom: 10px;
+}
+.radio-group label {
+    display: flex; align-items: center; font-weight: normal;
+    font-size: 0.9rem; cursor: pointer;
+}
+input[type="radio"] { margin-right: 5px; }
+
+/* Liste Déroulante Personnalisée */
+.custom-dropdown { position: relative; margin-bottom: 15px; }
+.dropdown-list {
+    position: absolute; top: 100%; left: 0; right: 0;
+    background-color: white; border: 1px solid #ccc;
+    border-top: none; border-radius: 0 0 8px 8px;
+    max-height: 200px; overflow-y: auto;
+    z-index: 1000; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.dropdown-list.hidden { display: none; }
+.dropdown-list ul { list-style: none; padding: 0; margin: 0; }
+.dropdown-list li {
+    padding: 10px; cursor: pointer; color: #333; border-top: 1px solid #eee;
+}
+.dropdown-list li:first-child { border-top: none; }
+.dropdown-list li:hover { background-color: #f0f0f0; }
+.dropdown-list input {
+    border-radius: 8px 8px 0 0; border-bottom: 1px solid #ccc !important;
+    margin-bottom: 0; box-shadow: none; cursor: text !important;
+}
+
+/* --- MODE SOMBRE --- */
+body.dark { background-color: #0d1222; color: #f0f0f0; }
+body.dark #ui-container {
+    background: rgba(40, 44, 52, 0.95); color: #f0f0f0;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
+}
+body.dark #ui-container h1 { color: #61afef; }
+body.dark #ui-container input[type="text"] {
+    background-color: #333740; color: #f0f0f0; border: 1px solid #555;
+}
+body.dark #ui-container button { background: #525c76; }
+body.dark #ui-container button:hover { background: #e94560; }
+body.dark #instructions { border-top: 1px solid #444; color: #bbb; }
+body.dark .label { background: rgba(255, 255, 255, 0.8); color: #333; }
+body.dark #controls-group { border-color: #444; }
+body.dark .dropdown-list { background-color: #333740; border-color: #555; }
+body.dark .dropdown-list li { color: #f0f0f0; border-top: 1px solid #444; }
+body.dark .dropdown-list li:hover { background-color: #444850; }
+body.dark .dropdown-list input { border-bottom-color: #555 !important; }
+
+/* Mobile */
+@media (max-width: 600px) {
+    #ui-container {
+        width: auto; left: 10px; right: 10px; top: 80px;
+        max-height: 80vh; overflow-y: auto; padding: 15px;
+    }
+    #toggle-menu {
+        top: 15px !important; right: 15px !important; width: 45px; height: 45px;
+    }
+    #ui-container.hidden { transform: translateY(-150%); }
+}

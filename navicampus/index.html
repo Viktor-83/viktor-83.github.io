@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NaviCampus 3D</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
+    <script src="config.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button id="toggle-menu" onclick="toggleMenu()">&#10005;</button>
+
+    <div id="ui-container">
+      <h1><span class="icon">&#128205;</span>NaviCampus 3D</h1>
+
+      <div id="controls-group">
+        <button onclick="toggleTheme()" id="theme-toggle-btn">Mode Sombre</button>
+        
+        <label>Affichage des étages</label>
+        <div class="radio-group">
+            <label><input type="radio" name="floor_filter" value="0" checked onchange="setFloorVisibility(0)"> RDC</label>
+            <label><input type="radio" name="floor_filter" value="1" onchange="setFloorVisibility(1)"> 1er Étage</label>
+            <label><input type="radio" name="floor_filter" value="2" onchange="setFloorVisibility(2)"> Tous</label>
+        </div>
+
+        <div style="margin-top: 10px; border-top: 1px solid #ddd; padding-top: 10px;">
+            <label style="display: flex; align-items: center; cursor: pointer;">
+                <input type="checkbox" id="accessibility-check" style="margin-right: 8px;">
+                Mobilité Réduite (Ascenseur)
+            </label>
+        </div>
+      </div>
+      
+      <label for="start-search-display">Départ :</label>
+      <div id="start-dropdown-container" class="custom-dropdown">
+          <input type="text" id="start-search-display" placeholder="Sélectionnez un départ" readonly onclick="toggleDropdown('start')">
+          <div id="start-list-container" class="dropdown-list hidden">
+              <input type="text" id="start-filter-input" placeholder="Filtrer la liste...">
+              <ul id="start-list"></ul>
+          </div>
+          <input type="hidden" id="startPoint" value="0"> 
+      </div>
+
+      <label for="end-search-display">Arrivée :</label>
+      <div id="end-dropdown-container" class="custom-dropdown">
+          <input type="text" id="end-search-display" placeholder="Sélectionnez une arrivée" readonly onclick="toggleDropdown('end')">
+          <div id="end-list-container" class="dropdown-list hidden">
+              <input type="text" id="end-filter-input" placeholder="Filtrer la liste...">
+              <ul id="end-list"></ul>
+          </div>
+          <input type="hidden" id="endPoint" value="1">
+      </div>
+      
+      <button onclick="calculateRoute()">Naviguer</button>
+      <button class="secondary" onclick="resetView()">Tout afficher</button>
+
+      <div id="instructions">
+        <span style="color: #77dd77">■</span> Salles de cours<br />
+        <span style="color: #ffb347">■</span> Salles de repos<br />
+        <span style="color: #ffd700">■</span> Escaliers<br />
+        <span style="color: #9b59b6">■</span> Ascenseurs<br />
+        <span style="color: #00008b">■</span> Toilettes (WC)<br />
+        <span style="color: #ffc0cb">■</span> Accueil<br />
+        <span style="color: #ffffff; text-shadow: 0 0 2px #000;">■</span> Couloirs<br />
+      </div>
+    </div>
+
+    <div id="canvas-container"></div>
+    <div id="labels-container"></div> 
+
+    <script src="main.js"></script>
+    
+    <script>
+      // Gestionnaire ouverture/fermeture menu
+      function toggleMenu() {
+        const uiContainer = document.getElementById('ui-container');
+        const toggleBtn = document.getElementById('toggle-menu');
+        
+        uiContainer.classList.toggle('hidden');
+        toggleBtn.classList.toggle('menu-hidden');
+        
+        const isHidden = uiContainer.classList.contains('hidden');
+        toggleBtn.innerHTML = isHidden ? '&#9776;' : '&#10005;';
+
+        if (window.updateCameraOffset) {
+            window.updateCameraOffset(!isHidden);
+        }
+      }
+    </script>
+  </body>
+</html>
